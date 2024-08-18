@@ -10,4 +10,4 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if parent and objectController:
 		if parent.position.y > floorLevel:
-			objectController.place_object_in_scene(parent)
+			objectController.place_object_in_scene(parent, randi() % 2)

@@ -22,12 +22,11 @@ func launch_random_burden() -> void:
 	add_script(duplicated, %Respawns)
 	place_object_in_scene(duplicated)
 
-func place_object_in_scene(object: Node2D) -> void:
+func place_object_in_scene(object: Node2D, position: int = 1) -> void:
 	var pos: Vector2
-	if randi() % 2 == 1:
-		pos = %RespawnPoint1.position
-	else:
-		pos = %RespawnPoint2.position
+	match position:
+		0: pos = %RespawnPoint1.position
+		1: pos = %RespawnPoint2.position
 	
 	if object.get_parent() != scene:
 		if object.get_parent():
