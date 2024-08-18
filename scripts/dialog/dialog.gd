@@ -42,6 +42,7 @@ func _on_text_finished_typing() -> void:
 	typing = false
 
 func _on_skip_pressed() -> void:
+	%MenuSound.play()
 	if not Global.scales_visible:
 		Global.show_scales()
 	if not Global.inv_visible:

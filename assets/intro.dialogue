@@ -5,7 +5,7 @@ do Global.focus.emit()
 do Global.set_mouse_input(false)
 do wait(1.5)
 do Global.set_mouse_input(true)
-do Global.play_music.emit()
+
 You: What is that dog thing??
 ???: DOG THING?? Paltry child, I am The Canine Who Swallows Millions, Lord of Sacred Lands, The Royal Decay, Master of-
 You: That’s a long name.
@@ -15,6 +15,7 @@ You: Like the Egyptian Pharaoh?
 Anubis: Pft, curse Abraham for his confounding.
 Anubis: I am no Pharaoh! But it matters not little one. Behold.
 do Global.show_scales()
+do Global.play_music.emit()
 You: What is this?
 Anubis: These are the Scales of Justice. To measure these wretched souls.
 You: Like with the Feather or something?

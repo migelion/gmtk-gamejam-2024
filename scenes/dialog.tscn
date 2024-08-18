@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ssfwuy2blt4l"]
+[gd_scene load_steps=11 format=3 uid="uid://ssfwuy2blt4l"]
 
 [ext_resource type="Script" path="res://scripts/dialog/dialog.gd" id="1_f3t5c"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_3m6lp"]
 [ext_resource type="Texture2D" uid="uid://x1bpfn072tlx" path="res://assets/background.png" id="2_oi2nk"]
 [ext_resource type="AudioStream" uid="uid://cuvx18a3uj5fn" path="res://assets/music/gameplay.ogg" id="2_thwvk"]
+[ext_resource type="AudioStream" uid="uid://dbypxcnw86v83" path="res://assets/sfx/menu sounds/menu2.wav" id="2_yl65x"]
 [ext_resource type="Script" path="res://scripts/dialog/music_player.gd" id="3_dwna6"]
 [ext_resource type="Texture2D" uid="uid://deve8kursx3nx" path="res://assets/sprites/anubis_placeholder.png" id="3_i4b66"]
 [ext_resource type="Script" path="res://scripts/dialog/black_screen.gd" id="3_q1p8c"]
@@ -20,6 +21,10 @@ corner_radius_bottom_left = 8
 
 [node name="Dialog" type="Node2D"]
 script = ExtResource("1_f3t5c")
+
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_yl65x")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_thwvk")

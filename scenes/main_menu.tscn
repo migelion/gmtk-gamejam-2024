@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtc3lqfj7qp17"]
+[gd_scene load_steps=4 format=3 uid="uid://dtc3lqfj7qp17"]
 
 [ext_resource type="Script" path="res://scripts/main_menu/start_button.gd" id="1_gukbc"]
+[ext_resource type="AudioStream" uid="uid://dbypxcnw86v83" path="res://assets/sfx/menu sounds/menu2.wav" id="1_lkidb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xyvf"]
 bg_color = Color(0.388721, 0.298012, 0.189311, 1)
 
 [node name="MainMenu" type="Node2D"]
+
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_lkidb")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1280.0
