@@ -24,6 +24,7 @@ script = ExtResource("1_f3t5c")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_thwvk")
+volume_db = -10.209
 script = ExtResource("3_dwna6")
 
 [node name="Table" type="Sprite2D" parent="."]
