@@ -6,26 +6,29 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oflb7"]
-size = Vector2(427, 20)
+size = Vector2(427, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgafv"]
-size = Vector2(632.75, 20)
+size = Vector2(632.75, 14)
 
 [node name="Inventory" type="Node2D"]
 position = Vector2(249, 327)
 
 [node name="Panel" type="Panel" parent="."]
+z_index = -1
 offset_left = -216.0
 offset_top = -287.0
 offset_right = 208.0
 offset_bottom = 349.0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_us16u")
+metadata/_edit_use_anchors_ = true
 
 [node name="Bottom" type="StaticBody2D" parent="Panel"]
 position = Vector2(216, 647)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Bottom"]
-position = Vector2(-2.5, 0)
+position = Vector2(-2.5, 52)
 shape = SubResource("RectangleShape2D_oflb7")
 
 [node name="Left" type="StaticBody2D" parent="Panel"]
@@ -33,7 +36,7 @@ position = Vector2(-18, 287)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Left"]
-position = Vector2(30.625, -8.99992)
+position = Vector2(30.625, -13.9999)
 shape = SubResource("RectangleShape2D_xgafv")
 
 [node name="Right" type="StaticBody2D" parent="Panel"]
@@ -41,5 +44,5 @@ position = Vector2(424, 287)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Right"]
-position = Vector2(30.625, -8.99992)
+position = Vector2(30.6251, -3.99994)
 shape = SubResource("RectangleShape2D_xgafv")
