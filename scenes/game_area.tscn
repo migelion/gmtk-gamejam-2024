@@ -8,10 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://va8m81q5rbia" path="res://assets/sfx/impactGeneric_light_003.ogg" id="7_ldvj8"]
 [ext_resource type="AudioStream" uid="uid://bxdw1sjhorupp" path="res://assets/sfx/impactGeneric_light_004.ogg" id="8_vxycx"]
 [ext_resource type="Script" path="res://scripts/burden_timer.gd" id="9_tgafl"]
-[ext_resource type="Script" path="res://scripts/marble.gd" id="10_w6f5c"]
 [ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="11_wbjux"]
 [ext_resource type="Texture2D" uid="uid://7efl5il8nte8" path="res://assets/sprites/coin.png" id="12_n7tvn"]
 [ext_resource type="Texture2D" uid="uid://g7o80c4vf6lm" path="res://assets/sprites/cat.png" id="13_tjk87"]
+[ext_resource type="Script" path="res://scripts/burden.gd" id="13_tnuiq"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="14_l6b5e"]
 [ext_resource type="Script" path="res://scripts/respawns.gd" id="15_xv5my"]
 [ext_resource type="PackedScene" uid="uid://dlfwq8d4t1fgo" path="res://scenes/scale.tscn" id="16_if4jh"]
@@ -72,7 +72,7 @@ unique_name_in_owner = true
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("10_w6f5c")
+script = ExtResource("13_tnuiq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Marble"]
 scale = Vector2(0.128, 0.128)
@@ -87,7 +87,7 @@ mass = 0.25
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("10_w6f5c")
+script = ExtResource("13_tnuiq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Coin"]
 scale = Vector2(0.125, 0.125)
@@ -100,7 +100,8 @@ shape = SubResource("CircleShape2D_7qbqu")
 position = Vector2(40, 15)
 mass = 8.0
 freeze = true
-script = ExtResource("10_w6f5c")
+script = ExtResource("13_tnuiq")
+spawnRate = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Cat"]
 scale = Vector2(0.25, 0.25)

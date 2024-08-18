@@ -2,10 +2,14 @@ extends Node
 
 var rng = RandomNumberGenerator.new()
 var scene: Node
+var totalSpawnRate
+var burdens
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	scene = get_parent()
+	burdens = %Burdens.get_children()
+	totalSpawnRate = burdens.map(func(burden): return burden.spawnRate).reduce(func(a, n): return a + n, 0)
 
 func add_script(node: Node, scriptNode: Node):
 	var scriptCopy = scriptNode.duplicate()
@@ -13,9 +17,13 @@ func add_script(node: Node, scriptNode: Node):
 	node.add_child(scriptCopy)
 
 func launch_random_burden() -> void:
-	var count = %Burdens.get_child_count()
-	var idx = rng.randi_range(0, count - 1)
-	var toLaunch = %Burdens.get_child(idx)
+	var choice = rng.randf_range(0, totalSpawnRate)
+	var toLaunch = burdens[burdens.size() - 1]
+	for b in burdens:
+		choice -= b.spawnRate
+		if choice < 0:
+			toLaunch = b
+			break
 	print("Launching: ", toLaunch.name)
 	var duplicated = toLaunch.duplicate()
 	add_script(duplicated, %MouseControllable)
