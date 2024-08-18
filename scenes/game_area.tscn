@@ -1,12 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=17 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
+[ext_resource type="AudioStream" uid="uid://c4084t05cw725" path="res://assets/sfx/scale hits/hit_light_1.wav" id="3_txwsj"]
 [ext_resource type="Script" path="res://scripts/sound_controller.gd" id="3_wvbqk"]
-[ext_resource type="AudioStream" uid="uid://bskdyg8ocq6cq" path="res://assets/sfx/impactGeneric_light_000.ogg" id="4_f5ckc"]
-[ext_resource type="AudioStream" uid="uid://bi5hnspi8te22" path="res://assets/sfx/impactGeneric_light_001.ogg" id="5_x13a8"]
-[ext_resource type="AudioStream" uid="uid://claf7g53b0fjl" path="res://assets/sfx/impactGeneric_light_002.ogg" id="6_c6pf6"]
-[ext_resource type="AudioStream" uid="uid://va8m81q5rbia" path="res://assets/sfx/impactGeneric_light_003.ogg" id="7_ldvj8"]
-[ext_resource type="AudioStream" uid="uid://bxdw1sjhorupp" path="res://assets/sfx/impactGeneric_light_004.ogg" id="8_vxycx"]
+[ext_resource type="AudioStream" uid="uid://dadackukt5t1h" path="res://assets/sfx/scale hits/hit_light_2.wav" id="4_5dpx3"]
+[ext_resource type="AudioStream" uid="uid://dpxf3jei7akxv" path="res://assets/sfx/other sounds/pickup2.wav" id="5_twir8"]
 [ext_resource type="Script" path="res://scripts/burden_timer.gd" id="9_tgafl"]
 [ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="11_wbjux"]
 [ext_resource type="Texture2D" uid="uid://7efl5il8nte8" path="res://assets/sprites/coin.png" id="12_n7tvn"]
@@ -17,12 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://dlfwq8d4t1fgo" path="res://scenes/scale.tscn" id="16_if4jh"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nysj8"]
-streams_count = 5
-stream_0/stream = ExtResource("4_f5ckc")
-stream_1/stream = ExtResource("5_x13a8")
-stream_2/stream = ExtResource("6_c6pf6")
-stream_3/stream = ExtResource("7_ldvj8")
-stream_4/stream = ExtResource("8_vxycx")
+streams_count = 2
+stream_0/stream = ExtResource("3_txwsj")
+stream_1/stream = ExtResource("4_5dpx3")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75dwd"]
 radius = 15.0
@@ -44,6 +39,10 @@ script = ExtResource("3_wvbqk")
 [node name="ImpactSound" type="AudioStreamPlayer" parent="Controllers/SoundController"]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_nysj8")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="Controllers/SoundController"]
+unique_name_in_owner = true
+stream = ExtResource("5_twir8")
 
 [node name="BurdenTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -126,3 +125,4 @@ script = ExtResource("15_xv5my")
 [connection signal="impact" from="Offscreen/Burdens/Marble" to="Controllers/SoundController" method="_on_marble_impact"]
 [connection signal="body_entered" from="Offscreen/Burdens/Coin" to="Offscreen/Burdens/Coin" method="_on_body_entered"]
 [connection signal="impact" from="Offscreen/Burdens/Coin" to="Controllers/SoundController" method="_on_coin_impact"]
+[connection signal="pickup" from="Offscreen/Scripts/MouseControllable" to="Controllers/SoundController" method="_on_mouse_controllable_pickup"]

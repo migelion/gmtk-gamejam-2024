@@ -1,5 +1,7 @@
 extends Node
 
+signal pickup
+
 var grabbed = false
 var parent: PhysicsBody2D
 var parentCharacter: CharacterBody2D
@@ -18,7 +20,7 @@ func _ready() -> void:
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		grabbed = true
+		pickup.emit()
 		if parentRigid:
 			parentRigid.freeze = true
 			parentRigid.set_collision_layer_value(0b0001, false)

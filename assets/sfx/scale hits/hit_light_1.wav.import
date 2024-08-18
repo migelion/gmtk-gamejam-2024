@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4084t05cw725"
+path="res://.godot/imported/hit_light_1.wav-c6001353dd4108f77196f46efd27718b.sample"
+
+[deps]
+
+source_file="res://assets/sfx/scale hits/hit_light_1.wav"
+dest_files=["res://.godot/imported/hit_light_1.wav-c6001353dd4108f77196f46efd27718b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

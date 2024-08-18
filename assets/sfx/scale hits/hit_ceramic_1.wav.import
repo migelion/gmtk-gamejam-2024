@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ovjpaws422if"
+path="res://.godot/imported/hit_ceramic_1.wav-81e6a8425724e81ff6877138ca5bd062.sample"
+
+[deps]
+
+source_file="res://assets/sfx/scale hits/hit_ceramic_1.wav"
+dest_files=["res://.godot/imported/hit_ceramic_1.wav-81e6a8425724e81ff6877138ca5bd062.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
