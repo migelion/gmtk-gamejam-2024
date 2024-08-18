@@ -2,6 +2,7 @@ extends Node
 
 signal focus
 signal play_music
+signal hide_sprite
 
 var scales = preload("res://scenes/game_area.tscn")
 var inventory = preload("res://scenes/inventory.tscn")
@@ -27,9 +28,6 @@ func show_inventory() -> void:
 	inv_visible = true
 
 func show_sprite(_sprite: String) -> void:
-	pass
-
-func hide_sprite() -> void:
 	pass
 
 func play_sound(_sound: String) -> void:

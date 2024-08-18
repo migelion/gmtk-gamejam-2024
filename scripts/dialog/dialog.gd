@@ -6,6 +6,7 @@ var typing: bool = false
 var enabled: bool = true
 
 func _ready() -> void:
+	Global.hide_sprite.connect(hide_sprite)
 	resource = load("res://assets/intro.dialogue")
 	line = await resource.get_next_dialogue_line("start")
 	new_line()
@@ -33,6 +34,9 @@ func end() -> void:
 	$DialogBox.queue_free()
 	Global.game_started = true
 	enabled = false
+
+func hide_sprite() -> void:
+	%CharacterSprite.visible = false
 
 func _on_text_finished_typing() -> void:
 	typing = false

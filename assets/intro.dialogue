@@ -31,9 +31,10 @@ Anubis: Oh look. It appears a trial run is in order.
 do Global.show_sprite("npc2")
 Stranger: Greetings.
 Anubis: Make not mistakes. Now, observe.
-do Global.place_feather
+do Global.place_feather()
 Anubis: Balanced. You may pass.
 Stranger: Thank you.
+do Global.hide_sprite.emit()
 You: I don’t even have proper training for this...
 do Global.play_sound("leaving")
 
