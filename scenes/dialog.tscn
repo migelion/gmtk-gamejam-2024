@@ -28,7 +28,7 @@ volume_db = -10.209
 script = ExtResource("3_dwna6")
 
 [node name="Table" type="Sprite2D" parent="."]
-position = Vector2(837, 355)
+position = Vector2(845, 355)
 scale = Vector2(0.415636, 0.415636)
 texture = ExtResource("2_66nl5")
 

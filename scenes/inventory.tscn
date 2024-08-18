@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpgmoq8irj1h"]
+[gd_scene load_steps=5 format=3 uid="uid://dpgmoq8irj1h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us16u"]
-bg_color = Color(0.109804, 0.0666667, 0.0352941, 0.784314)
+bg_color = Color(0.109804, 0.0666667, 0.0352941, 0.85098)
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oflb7"]
-size = Vector2(427, 132)
+size = Vector2(435, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgi40"]
+size = Vector2(845, 107)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgafv"]
 size = Vector2(632.75, 14)
@@ -28,7 +31,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(216, 647)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Bottom"]
-position = Vector2(-2.5, 52)
+position = Vector2(1.5, 51.5)
 shape = SubResource("RectangleShape2D_oflb7")
 
 [node name="Left" type="StaticBody2D" parent="Panel"]
@@ -36,8 +39,8 @@ position = Vector2(-18, 287)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Left"]
-position = Vector2(30.625, -13.9999)
-shape = SubResource("RectangleShape2D_xgafv")
+position = Vector2(54.4998, 32.5001)
+shape = SubResource("RectangleShape2D_tgi40")
 
 [node name="Right" type="StaticBody2D" parent="Panel"]
 position = Vector2(424, 287)
