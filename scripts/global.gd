@@ -4,9 +4,12 @@ signal focus
 signal play_music
 
 var scales = preload("res://scenes/game_area.tscn")
+var inventory = preload("res://scenes/inventory.tscn")
+
 var blackscreen: bool = true
 var mouse_input: bool = true
 var scales_visible: bool = false
+var inv_visible: bool = false
 var game_started: bool = false
 
 # Dialog functions
@@ -19,7 +22,9 @@ func show_scales() -> void:
 	scales_visible = true
 
 func show_inventory() -> void:
-	pass
+	var instance = inventory.instantiate()
+	add_child(instance)
+	inv_visible = true
 
 func show_sprite(_sprite: String) -> void:
 	pass

@@ -40,6 +40,8 @@ func _on_text_finished_typing() -> void:
 func _on_skip_pressed() -> void:
 	if not Global.scales_visible:
 		Global.show_scales()
+	if not Global.inv_visible:
+		Global.show_inventory()
 	if !$MusicPlayer.playing:
 		$MusicPlayer.play_music()
 	end()

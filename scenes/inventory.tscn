@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://dpgmoq8irj1h"]
+[gd_scene load_steps=4 format=3 uid="uid://dpgmoq8irj1h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us16u"]
+bg_color = Color(0.109804, 0.0666667, 0.0352941, 0.784314)
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oflb7"]
+size = Vector2(427, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgafv"]
+size = Vector2(632.75, 20)
 
 [node name="Inventory" type="Node2D"]
+position = Vector2(249, 327)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -216.0
+offset_top = -287.0
+offset_right = 208.0
+offset_bottom = 349.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_us16u")
+
+[node name="Bottom" type="StaticBody2D" parent="Panel"]
+position = Vector2(216, 647)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Bottom"]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_oflb7")
+
+[node name="Left" type="StaticBody2D" parent="Panel"]
+position = Vector2(-18, 287)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Left"]
+position = Vector2(30.625, -8.99992)
+shape = SubResource("RectangleShape2D_xgafv")
+
+[node name="Right" type="StaticBody2D" parent="Panel"]
+position = Vector2(424, 287)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Right"]
+position = Vector2(30.625, -8.99992)
+shape = SubResource("RectangleShape2D_xgafv")
