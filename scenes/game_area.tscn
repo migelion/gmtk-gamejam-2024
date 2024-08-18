@@ -51,15 +51,15 @@ autostart = true
 script = ExtResource("9_tgafl")
 
 [node name="Scale" parent="." instance=ExtResource("16_if4jh")]
-position = Vector2(912, 240)
+position = Vector2(888, 240)
 
 [node name="RespawnPoint1" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(704, -32)
+position = Vector2(680, -32)
 
 [node name="RespawnPoint2" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1088, -32)
+position = Vector2(1064, -32)
 
 [node name="Offscreen" type="Node2D" parent="."]
 physics_interpolation_mode = 2
