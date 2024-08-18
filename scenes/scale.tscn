@@ -80,7 +80,7 @@ scale = Vector2(1.75, 1.25)
 texture = ExtResource("2_b8g2o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Left/LeftPlate"]
-polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, -110, 10)
+polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, 0, 22, -110, 10)
 
 [node name="LeftLabel" type="Label" parent="Left/LeftPlate"]
 unique_name_in_owner = true
@@ -128,7 +128,7 @@ scale = Vector2(1.75, 1.25)
 texture = ExtResource("2_b8g2o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Right/RightPlate"]
-polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, -110, 10)
+polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, 0, 22, -110, 10)
 
 [node name="RightLabel" type="Label" parent="Right/RightPlate"]
 unique_name_in_owner = true
