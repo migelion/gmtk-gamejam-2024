@@ -127,11 +127,11 @@ script = ExtResource("15_xv5my")
 
 [node name="ScarabDropRight" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(873, 332)
+position = Vector2(1228, 332)
 
 [node name="ScarabDropLeft" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(489, 332)
+position = Vector2(516, 332)
 
 [node name="ScarabSpawnLeft" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -140,6 +140,10 @@ position = Vector2(-79, 437)
 [node name="ScarabSpawnRight" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(1337, 437)
+
+[node name="ScarabDespawnRight" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1337, 0)
 
 [connection signal="body_entered" from="Offscreen/Burdens/Marble" to="Offscreen/Burdens/Marble" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Coin" to="Offscreen/Burdens/Coin" method="_on_body_entered"]
