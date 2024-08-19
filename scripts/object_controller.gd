@@ -94,7 +94,7 @@ func is_burden(obj):
 	return asBurden != null
 
 func launch_random_scarab() -> void:
-	var targetCount = 15
+	var targetCount = 30
 	var liveBurdens = scene.get_children().filter(is_burden)
 	var createRand = rng.randi_range(0, targetCount + liveBurdens.size() - 1)
 	if createRand < targetCount:
