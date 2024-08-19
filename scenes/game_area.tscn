@@ -114,7 +114,7 @@ shape = SubResource("CircleShape2D_7qbqu")
 
 [node name="Cat" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(40, 15)
-mass = 6.5
+mass = 6.0
 freeze = true
 script = ExtResource("13_tnuiq")
 spawnRate = 0.1
