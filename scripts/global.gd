@@ -18,7 +18,7 @@ var game_started: bool = false
 var first_time: bool = true
 
 var weight_diff: float
-var max_diff: float = 160
+var max_diff: float = 140
 var time_score: float = 0
 var high_score: float = 0
 
