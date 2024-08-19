@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=25 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
@@ -12,12 +12,16 @@
 [ext_resource type="Texture2D" uid="uid://cxxyqsxr60fac" path="res://assets/ui/music-off.svg" id="8_02akh"]
 [ext_resource type="Script" path="res://scripts/burden_timer.gd" id="9_tgafl"]
 [ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="11_wbjux"]
-[ext_resource type="Texture2D" uid="uid://7efl5il8nte8" path="res://assets/sprites/coin.png" id="12_n7tvn"]
-[ext_resource type="Texture2D" uid="uid://g7o80c4vf6lm" path="res://assets/sprites/cat.png" id="13_tjk87"]
 [ext_resource type="Script" path="res://scripts/burden.gd" id="13_tnuiq"]
+[ext_resource type="Texture2D" uid="uid://c53jdhrnui2yf" path="res://assets/sprites/burdens/ankh.png" id="14_a4t8n"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="14_l6b5e"]
+[ext_resource type="Texture2D" uid="uid://dmah2t345m5cd" path="res://assets/sprites/burdens/candles.png" id="15_3qy31"]
 [ext_resource type="Script" path="res://scripts/respawns.gd" id="15_xv5my"]
+[ext_resource type="Texture2D" uid="uid://dd00lakfjn8xa" path="res://assets/sprites/burdens/car.png" id="16_epqeu"]
 [ext_resource type="PackedScene" uid="uid://dlfwq8d4t1fgo" path="res://scenes/scale.tscn" id="16_if4jh"]
+[ext_resource type="Texture2D" uid="uid://cwep1u0gnahao" path="res://assets/sprites/burdens/feather.png" id="17_bcm0f"]
+[ext_resource type="Texture2D" uid="uid://bomudkk3gn0gu" path="res://assets/sprites/burdens/pen.png" id="18_sks41"]
+[ext_resource type="Texture2D" uid="uid://dpfl6d78gprcy" path="res://assets/sprites/burdens/plane.png" id="20_1v6vy"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nysj8"]
 streams_count = 2
@@ -25,12 +29,6 @@ stream_0/stream = ExtResource("3_txwsj")
 stream_1/stream = ExtResource("4_5dpx3")
 
 [sub_resource type="GDScript" id="GDScript_8vbm7"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_75dwd"]
-radius = 15.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7qbqu"]
-radius = 8.0
 
 [node name="Scene" type="Node2D"]
 
@@ -41,6 +39,7 @@ script = ExtResource("1_kcnws")
 
 [node name="Time" type="Label" parent="Controllers/GameController"]
 unique_name_in_owner = true
+visible = false
 offset_left = 16.0
 offset_top = 8.0
 offset_right = 57.0
@@ -107,10 +106,106 @@ position = Vector2(896, -32)
 
 [node name="Offscreen" type="Node2D" parent="."]
 physics_interpolation_mode = 2
-visible = false
+position = Vector2(0, -42)
 
 [node name="Burdens" type="Node2D" parent="Offscreen"]
 unique_name_in_owner = true
+
+[node name="Ankh" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(48, 0)
+mass = 1.15
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Ankh"]
+scale = Vector2(0.0986989, 0.0986989)
+texture = ExtResource("14_a4t8n")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Ankh"]
+scale = Vector2(0.759603, 0.759603)
+polygon = PackedVector2Array(-8, -37, 0, -38, 6, -35, 10, -28, 9, -18, 6, -10, 16, -11, 18, -6, 16, -1, 9, -2, 1, -3, 3, 34, -4, 37, -10, 34, -7, -3, -22, -1, -25, -7, -23, -12, -13, -11, -17, -21, -13, -32)
+
+[node name="Candles" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(100, 0)
+mass = 1.15
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Candles"]
+scale = Vector2(0.153005, 0.153005)
+texture = ExtResource("15_3qy31")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Candles"]
+polygon = PackedVector2Array(-5, -26, -7, -17, -10, -15, -14, -11, -15, 0, -19, 3, -18, 25, 13, 26, 14, 13, 13, 6, 9, 2, 6, -13)
+
+[node name="Car" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(156, 0)
+mass = 5.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+spawnRate = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Car"]
+position = Vector2(37, 0)
+scale = Vector2(0.116779, 0.116779)
+texture = ExtResource("16_epqeu")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Car"]
+polygon = PackedVector2Array(4, -8, -19, -7, -22, -3, -22, 6, -25, 7, -25, 15, -13, 15, -9, 25, 0, 29, 11, 26, 14, 16, 48, 16, 49, 21, 53, 28, 63, 30, 71, 27, 74, 16, 93, 16, 95, 1, 92, -7, 68, -7, 63, -13, 49, -9, 50, -15, 43, -16, 40, -7, 18, -8, 21, -26, 16, -29)
+
+[node name="Feather" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(288, 0)
+mass = 0.1
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+spawnRate = 0.7
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Feather"]
+scale = Vector2(0.128, 0.128)
+texture = ExtResource("17_bcm0f")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Feather"]
+polygon = PackedVector2Array(-23, -12, -26, -10, -23, 3, -15, 11, -7, 13, -6, 17, 10, 17, 20, 14, 27, 14, 27, 10, 2, 2)
+
+[node name="Pen" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(0, -71)
+mass = 1.15
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Pen"]
+scale = Vector2(0.128, 0.128)
+texture = ExtResource("18_sks41")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Pen"]
+polygon = PackedVector2Array(-5, -6, -23, -6, -26, -3, -34, -2, -33, 4, 10, 4, 23, 5, 34, 0, 25, -4, 9, -4, -4, -3)
+
+[node name="Plane" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(86, -72)
+mass = 5.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+spawnRate = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Plane"]
+position = Vector2(28, 0)
+scale = Vector2(0.128, 0.128)
+texture = ExtResource("20_1v6vy")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Plane"]
+polygon = PackedVector2Array(-7, -17, -20, -21, -20, -36, -24, -38, -29, -27, -32, -26, -31, -8, -31, 0, -33, 24, -27, 23, -19, 13, -6, 13, -6, 23, 3, 24, 9, 16, 33, 14, 33, 10, 40, 10, 41, 20, 50, 20, 51, 9, 66, 8, 76, 13, 88, 12, 89, 3, 87, -22, 82, -22, 61, -3, 50, -16, 25, -26, 3, -30)
 
 [node name="Marble" type="RigidBody2D" parent="Offscreen/Burdens"]
 mass = 1.15
@@ -123,37 +218,8 @@ script = ExtResource("13_tnuiq")
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("11_wbjux")
 
-[node name="Collision" type="CollisionShape2D" parent="Offscreen/Burdens/Marble"]
-shape = SubResource("CircleShape2D_75dwd")
-
-[node name="Coin" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(-34, -14)
-mass = 0.4
-freeze = true
-contact_monitor = true
-max_contacts_reported = 1
-script = ExtResource("13_tnuiq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Coin"]
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("12_n7tvn")
-
-[node name="Collision" type="CollisionShape2D" parent="Offscreen/Burdens/Coin"]
-shape = SubResource("CircleShape2D_7qbqu")
-
-[node name="Cat" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(40, 15)
-mass = 4.0
-freeze = true
-script = ExtResource("13_tnuiq")
-spawnRate = 0.1
-
-[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Cat"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("13_tjk87")
-
-[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Cat"]
-polygon = PackedVector2Array(23, -7, 29, -37, 4, -35, 6, -20, -18, -10, -29, 35, 18, 35, 14, 13)
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Marble"]
+polygon = PackedVector2Array(-4, -15, -11, 11, 15, 6)
 
 [node name="Scripts" type="Node" parent="Offscreen"]
 
@@ -186,6 +252,11 @@ unique_name_in_owner = true
 position = Vector2(948, -126)
 
 [connection signal="pressed" from="Controllers/MuteMusic" to="Controllers/MuteMusic" method="_on_pressed"]
+[connection signal="body_entered" from="Offscreen/Burdens/Ankh" to="Offscreen/Burdens/Ankh" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Candles" to="Offscreen/Burdens/Candles" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Car" to="Offscreen/Burdens/Car" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Feather" to="Offscreen/Burdens/Feather" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Pen" to="Offscreen/Burdens/Pen" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Plane" to="Offscreen/Burdens/Plane" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Marble" to="Offscreen/Burdens/Marble" method="_on_body_entered"]
-[connection signal="body_entered" from="Offscreen/Burdens/Coin" to="Offscreen/Burdens/Coin" method="_on_body_entered"]
 [connection signal="pickup" from="Offscreen/Scripts/MouseControllable" to="Controllers/SoundController" method="_on_mouse_controllable_pickup"]
