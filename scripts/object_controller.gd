@@ -61,7 +61,7 @@ func launch_random_burden() -> void:
 	add_script(duplicated, %Respawns)
 	var side
 	if (rng.randi() % 2):
-		side = Side.LEFT
+		side = Side.RIGHT
 	else:
 		side = Side.RIGHT
 	launch_scarab_drop(duplicated, side)
