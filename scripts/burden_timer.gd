@@ -9,9 +9,9 @@ func _ready() -> void:
 func _timeout() -> void:	
 	if Global.game_started:
 		if items_spawned >= 3:
-			wait_time = 2
+			wait_time = 1.8
 		if items_spawned >= 20:
-			wait_time = 1.5
+			wait_time = 1.3
 		if items_spawned >= 40:
 			wait_time = 1
 		print("objects: %s" % items_spawned)

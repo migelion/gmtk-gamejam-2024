@@ -72,7 +72,7 @@ func launch_random_scavenger() -> void:
 	var target = liveBurdens[idx]
 	print ("Scavenging: ", target.name)
 	var side
-	if (rng.randi() % 2):
+	if rng.randi() % 2:
 		side = Side.LEFT
 	else:
 		side = Side.RIGHT
@@ -115,7 +115,7 @@ func place_object_in_scene(object: Node2D, position: int = 1) -> void:
 		object.position = pos
 	
 	var rigidObject = object as RigidBody2D
-	if (rigidObject):
+	if rigidObject:
 		rigidObject.freeze = true
 		PhysicsServer2D.body_set_state(
 			rigidObject.get_rid(),

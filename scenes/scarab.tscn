@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5bwwdt2x0twx"]
+[gd_scene load_steps=3 format=3 uid="uid://dvdl2mlcttvec"]
 
 [ext_resource type="Script" path="res://scripts/scarab.gd" id="1_bh15p"]
 [ext_resource type="Texture2D" uid="uid://dxnrmkcm5nlwm" path="res://assets/sprites/scarab.png" id="1_n4mrg"]

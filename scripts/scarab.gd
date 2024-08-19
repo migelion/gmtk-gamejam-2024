@@ -11,10 +11,6 @@ class_name Scarab
 enum State {DELIVERING, SCAVENGING, LEAVING}
 @export var state = State.LEAVING
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 func carry(object: Node2D):
 	assert(carried_object == null)
 	carried_object = object
@@ -25,6 +21,8 @@ func carry(object: Node2D):
 	var rigid = object as RigidBody2D
 	if rigid:
 		rigid.freeze = true
+		if rigid.has_method("disable_collision"):
+			rigid.disable_collision()
 	add_child(object)
 
 func drop():
@@ -37,6 +35,8 @@ func drop():
 	var carried_rigid = carried_object as RigidBody2D
 	if carried_rigid:
 		carried_rigid.freeze = false
+		if carried_rigid.has_method("enable_collision"):
+			carried_rigid.enable_collision()
 		carried_rigid.apply_central_impulse(
 			Vector2.RIGHT.rotated(global_rotation) * speed * carried_rigid.mass)
 	carried_object = null
@@ -46,9 +46,9 @@ func turn_toward(target_location, delta):
 	var current_rotation = global_rotation
 	target_rotation = fmod(target_rotation, 2 * PI)
 	current_rotation = fmod(current_rotation, 2 * PI)
-	if (target_rotation > current_rotation + PI):
+	if target_rotation > current_rotation + PI:
 		target_rotation -= 2 * PI
-	if (target_rotation < current_rotation - PI):
+	if target_rotation < current_rotation - PI:
 		target_rotation += 2 * PI
 	var local_turn_radius = min(turnRadius, global_position.distance_to(target_location))
 	var max_change = delta * speed / local_turn_radius
@@ -58,7 +58,7 @@ func turn_toward(target_location, delta):
 		global_rotation = current_rotation + sign(target_rotation - current_rotation) * max_change
 
 func _physics_process(delta: float) -> void:
-	if (!is_instance_valid(target)):
+	if !is_instance_valid(target):
 		target = despawnTarget
 		state = State.LEAVING
 	var target_location = target.global_position
