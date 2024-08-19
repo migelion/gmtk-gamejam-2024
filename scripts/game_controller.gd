@@ -8,7 +8,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if time_running:
 		Global.time_score += delta
-		%Time.text = "%7.2f" % Global.time_score
+		%Time.text = "Time: %8.2f\nHigh Score: %8.2f" % [Global.time_score, Global.high_score]
 
 	# Start timer
 	if Global.game_started and not time_running:

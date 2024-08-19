@@ -20,7 +20,7 @@ var first_time: bool = true
 var weight_diff: float
 var max_diff: float = 10
 var time_score: float = 0
-var max_score: float = 0
+var high_score: float = 0
 
 func _process(delta: float) -> void:
 	# Lose condition
@@ -29,8 +29,8 @@ func _process(delta: float) -> void:
 		add_child(instance)
 		game_started = false
 		
-		if time_score > max_score:
-			max_score = time_score
+		if time_score > high_score:
+			high_score = time_score
 		
 func restart_game() -> void:
 	weight_diff = 0
