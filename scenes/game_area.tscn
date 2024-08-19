@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=34 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://scripts/respawns.gd" id="15_xv5my"]
 [ext_resource type="Texture2D" uid="uid://dd00lakfjn8xa" path="res://assets/sprites/burdens/car.png" id="16_epqeu"]
 [ext_resource type="PackedScene" uid="uid://dlfwq8d4t1fgo" path="res://scenes/scale.tscn" id="16_if4jh"]
-[ext_resource type="Texture2D" uid="uid://cwep1u0gnahao" path="res://assets/sprites/burdens/feather.png" id="17_bcm0f"]
+<[ext_resource type="Texture2D" uid="uid://cwep1u0gnahao" path="res://assets/sprites/burdens/feather.png" id="17_bcm0f"]
 [ext_resource type="Texture2D" uid="uid://bomudkk3gn0gu" path="res://assets/sprites/burdens/pen.png" id="18_sks41"]
 [ext_resource type="Texture2D" uid="uid://dpfl6d78gprcy" path="res://assets/sprites/burdens/plane.png" id="20_1v6vy"]
 [ext_resource type="Texture2D" uid="uid://dhmwcmfbjful7" path="res://assets/sprites/burdens/player.png" id="20_24oks"]
@@ -28,6 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://lu6brkl4i8xl" path="res://assets/sprites/burdens/pot.png" id="22_u600m"]
 [ext_resource type="Texture2D" uid="uid://u0s4gwdsmgyo" path="res://assets/sprites/burdens/slab.png" id="23_kkeh5"]
 [ext_resource type="Texture2D" uid="uid://cql4bpan2uif" path="res://assets/sprites/burdens/stone.png" id="24_6gi2q"]
+[ext_resource type="Texture2D" uid="uid://ckqc3c6yw8bde" path="res://assets/sprites/hat.svg" id="16_3vjnv"]
+[ext_resource type="PackedScene" uid="uid://dlfwq8d4t1fgo" path="res://scenes/scale.tscn" id="16_if4jh"]
+[ext_resource type="Texture2D" uid="uid://uk2trwlnom6r" path="res://assets/sprites/sunflower.png" id="17_5h464"]
+[ext_resource type="Texture2D" uid="uid://dw5ateey61b0e" path="res://assets/sprites/turkey.svg" id="18_6eo5y"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nysj8"]
 streams_count = 4
@@ -37,6 +41,15 @@ stream_2/stream = ExtResource("7_syo52")
 stream_3/stream = ExtResource("8_bbma6")
 
 [sub_resource type="GDScript" id="GDScript_8vbm7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_75dwd"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qbqu"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gfnyu"]
+radius = 64.0
 
 [node name="Scene" type="Node2D"]
 
@@ -298,6 +311,44 @@ texture = ExtResource("24_6gi2q")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Stone"]
 polygon = PackedVector2Array(-7, -20, -22, -16, -29, -2, -28, 13, -22, 19, 2, 20, 28, 16, 32, 6, 32, -5, 29, -13, 23, -19)
+
+[node name="Hat" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(-29, 41)
+mass = 2.0
+script = ExtResource("13_tnuiq")
+spawnRate = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Hat"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("16_3vjnv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Offscreen/Burdens/Hat"]
+polygon = PackedVector2Array(18, -5, 28, -2, 28, 9, 14, 17, -24, 16, -29, 4, -24, -6, 2, -17, 20, -17)
+
+[node name="Sunflower" type="RigidBody2D" parent="Offscreen/Burdens"]
+script = ExtResource("13_tnuiq")
+spawnRate = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Sunflower"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_5h464")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offscreen/Burdens/Sunflower"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_gfnyu")
+
+[node name="Turkey" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(130, -18)
+mass = 4.0
+script = ExtResource("13_tnuiq")
+spawnRate = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Turkey"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("18_6eo5y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Offscreen/Burdens/Turkey"]
+polygon = PackedVector2Array(29, 13, 9, 20, -15, 20, -36, 12, 9, -21, 21, -14)
 
 [node name="Scripts" type="Node" parent="Offscreen"]
 
