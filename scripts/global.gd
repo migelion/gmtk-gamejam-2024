@@ -5,6 +5,7 @@ signal play_music
 signal play_impact_sound
 signal hide_sprite
 signal restart
+signal toggle_music
 
 var scales = preload("res://scenes/game_area.tscn")
 var inventory = preload("res://scenes/inventory.tscn")
