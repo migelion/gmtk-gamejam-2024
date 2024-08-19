@@ -18,14 +18,19 @@ var game_started: bool = false
 var first_time: bool = true
 
 var weight_diff: float
-var max_diff: float = 170
+var max_diff: float = 10
+var time_score: float = 0
+var max_score: float = 0
 
 func _process(delta: float) -> void:
+	# Lose condition
 	if weight_diff > max_diff and game_started:
-		print("Game over!")
 		var instance = game_over.instantiate()
 		add_child(instance)
 		game_started = false
+		
+		if time_score > max_score:
+			max_score = time_score
 		
 func restart_game() -> void:
 	weight_diff = 0

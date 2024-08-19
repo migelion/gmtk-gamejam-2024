@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=19 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
@@ -20,6 +20,8 @@ streams_count = 2
 stream_0/stream = ExtResource("3_txwsj")
 stream_1/stream = ExtResource("4_5dpx3")
 
+[sub_resource type="GDScript" id="GDScript_8vbm7"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_75dwd"]
 radius = 15.0
 
@@ -32,6 +34,14 @@ radius = 8.0
 
 [node name="GameController" type="Node" parent="Controllers"]
 script = ExtResource("1_kcnws")
+
+[node name="Time" type="Label" parent="Controllers/GameController"]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 57.0
+offset_bottom = 31.0
+text = "00.00"
 
 [node name="ObjectController" type="Node" parent="Controllers"]
 script = ExtResource("1_1akay")
@@ -52,6 +62,9 @@ stream = ExtResource("5_twir8")
 wait_time = 3.0
 autostart = true
 script = ExtResource("9_tgafl")
+
+[node name="GameTimer" type="Node" parent="."]
+script = SubResource("GDScript_8vbm7")
 
 [node name="Scale" parent="." instance=ExtResource("16_if4jh")]
 position = Vector2(888, 240)
