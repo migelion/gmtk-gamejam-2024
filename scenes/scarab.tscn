@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5bwwdt2x0twx"]
+
+[ext_resource type="Script" path="res://scripts/scarab.gd" id="1_bh15p"]
+[ext_resource type="Texture2D" uid="uid://dxnrmkcm5nlwm" path="res://assets/sprites/scarab.png" id="1_n4mrg"]
+
+[node name="Scarab" type="Node2D"]
+script = ExtResource("1_bh15p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-18, 0)
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_n4mrg")
