@@ -14,6 +14,8 @@ var scales_visible: bool = false
 var inv_visible: bool = false
 var game_started: bool = false
 
+var weight_diff: float
+
 # Dialog functions
 func set_mouse_input(cond: bool) -> void:
 	mouse_input = cond

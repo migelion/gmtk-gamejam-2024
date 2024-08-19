@@ -82,16 +82,6 @@ texture = ExtResource("2_b8g2o")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Left/LeftPlate"]
 polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, 0, 22, -110, 10)
 
-[node name="LeftLabel" type="Label" parent="Left/LeftPlate"]
-unique_name_in_owner = true
-visible = false
-offset_left = -40.0
-offset_top = 28.0
-offset_right = 1.0
-offset_bottom = 51.0
-text = "250.0
-"
-
 [node name="Spring" type="Node2D" parent="Left"]
 
 [node name="Joint" type="DampedSpringJoint2D" parent="Left/Spring"]
@@ -129,15 +119,6 @@ texture = ExtResource("2_b8g2o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Right/RightPlate"]
 polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, 0, 22, -110, 10)
-
-[node name="RightLabel" type="Label" parent="Right/RightPlate"]
-unique_name_in_owner = true
-visible = false
-offset_left = -40.0
-offset_top = 28.0
-offset_right = 1.0
-offset_bottom = 51.0
-text = "250.0"
 
 [node name="Spring" type="Node2D" parent="Right"]
 
