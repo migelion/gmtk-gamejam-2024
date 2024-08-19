@@ -19,7 +19,7 @@ func _timeout() -> void:
 		if items_spawned >= 100:
 			wait_time = 0.5
 		if items_spawned >= 200:
-			wait_time = 0.25
+			wait_time = 0.2
 		print("objects: %s" % items_spawned)
 		print("wait time: %s" % wait_time)
 		$"../Controllers/ObjectController".launch_random_scarab()
