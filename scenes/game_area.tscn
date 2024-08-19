@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://scripts/respawns.gd" id="15_xv5my"]
 [ext_resource type="Texture2D" uid="uid://dd00lakfjn8xa" path="res://assets/sprites/burdens/car.png" id="16_epqeu"]
 [ext_resource type="PackedScene" uid="uid://dlfwq8d4t1fgo" path="res://scenes/scale.tscn" id="16_if4jh"]
-<[ext_resource type="Texture2D" uid="uid://cwep1u0gnahao" path="res://assets/sprites/burdens/feather.png" id="17_bcm0f"]
+[ext_resource type="Texture2D" uid="uid://cwep1u0gnahao" path="res://assets/sprites/burdens/feather.png" id="17_bcm0f"]
 [ext_resource type="Texture2D" uid="uid://bomudkk3gn0gu" path="res://assets/sprites/burdens/pen.png" id="18_sks41"]
 [ext_resource type="Texture2D" uid="uid://dpfl6d78gprcy" path="res://assets/sprites/burdens/plane.png" id="20_1v6vy"]
 [ext_resource type="Texture2D" uid="uid://dhmwcmfbjful7" path="res://assets/sprites/burdens/player.png" id="20_24oks"]
