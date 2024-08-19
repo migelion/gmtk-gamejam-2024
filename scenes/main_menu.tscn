@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dbypxcnw86v83" path="res://assets/sfx/menu sounds/menu2.wav" id="1_lkidb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xyvf"]
-bg_color = Color(0.388721, 0.298012, 0.189311, 1)
+bg_color = Color(0.388235, 0.298039, 0.188235, 1)
 
 [node name="MainMenu" type="Node2D"]
 

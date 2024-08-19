@@ -10,6 +10,9 @@ func _ready() -> void:
 	resource = load("res://assets/intro.dialogue")
 	line = await resource.get_next_dialogue_line("start")
 	new_line()
+	
+	if !Global.first_time:
+		skip()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released(&"diag_continue") and Global.mouse_input and enabled:
@@ -29,10 +32,20 @@ func new_line() -> void:
 		%Text.dialogue_line = line
 		%Text.type_out()
 		typing = true
-	
+
+func skip() -> void:
+	if not Global.scales_visible:
+		Global.show_scales()
+	if not Global.inv_visible:
+		Global.show_inventory()
+	if !$MusicPlayer.playing:
+		$MusicPlayer.play_music()
+	end()
+
 func end() -> void:
 	$DialogBox.queue_free()
 	Global.game_started = true
+	Global.first_time = false
 	enabled = false
 
 func hide_sprite() -> void:
@@ -43,10 +56,4 @@ func _on_text_finished_typing() -> void:
 
 func _on_skip_pressed() -> void:
 	%MenuSound.play()
-	if not Global.scales_visible:
-		Global.show_scales()
-	if not Global.inv_visible:
-		Global.show_inventory()
-	if !$MusicPlayer.playing:
-		$MusicPlayer.play_music()
-	end()
+	skip()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=18 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
+[ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
 [ext_resource type="AudioStream" uid="uid://c4084t05cw725" path="res://assets/sfx/scale hits/hit_light_1.wav" id="3_txwsj"]
 [ext_resource type="Script" path="res://scripts/sound_controller.gd" id="3_wvbqk"]
 [ext_resource type="AudioStream" uid="uid://dadackukt5t1h" path="res://assets/sfx/scale hits/hit_light_2.wav" id="4_5dpx3"]
@@ -28,6 +29,9 @@ radius = 8.0
 [node name="Scene" type="Node2D"]
 
 [node name="Controllers" type="Node" parent="."]
+
+[node name="GameController" type="Node" parent="Controllers"]
+script = ExtResource("1_kcnws")
 
 [node name="ObjectController" type="Node" parent="Controllers"]
 script = ExtResource("1_1akay")

@@ -4,17 +4,36 @@ signal focus
 signal play_music
 signal play_impact_sound
 signal hide_sprite
+signal restart
 
 var scales = preload("res://scenes/game_area.tscn")
 var inventory = preload("res://scenes/inventory.tscn")
+var game_over = preload("res://scenes/game_over.tscn")
 
 var blackscreen: bool = true
 var mouse_input: bool = true
 var scales_visible: bool = false
 var inv_visible: bool = false
 var game_started: bool = false
+var first_time: bool = true
 
 var weight_diff: float
+var max_diff: float = 60
+
+func _process(delta: float) -> void:
+	if weight_diff > max_diff and game_started:
+		print("Game over!")
+		var instance = game_over.instantiate()
+		add_child(instance)
+		game_started = false
+		
+
+func restart_game() -> void:
+	weight_diff = 0
+	game_started = true
+	get_tree().change_scene_to_file("res://scenes/dialog.tscn")
+	show_scales()
+	#show_inventory()
 
 # Dialog functions
 func set_mouse_input(cond: bool) -> void:

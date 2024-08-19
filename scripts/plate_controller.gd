@@ -1,9 +1,5 @@
 extends Node
 
-@export var balance_limit: float = 230
-
-var diff: float
-
 func _process(delta: float) -> void:
 	var left_y = %LeftPlate.position.y
 	var right_y = %RightPlate.position.y
