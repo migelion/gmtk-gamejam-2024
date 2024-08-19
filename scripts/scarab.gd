@@ -50,7 +50,7 @@ func turn_toward(target_location, delta):
 		target_rotation -= 2 * PI
 	if target_rotation < current_rotation - PI:
 		target_rotation += 2 * PI
-	var local_turn_radius = min(turnRadius, global_position.distance_to(target_location))
+	var local_turn_radius = min(turnRadius, global_position.distance_to(target_location) / 2)
 	var max_change = delta * speed / local_turn_radius
 	if abs(target_rotation - current_rotation) < max_change:
 		global_rotation = target_rotation
@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	var target_location = target.global_position
 	turn_toward(target_location, delta)
 	global_position += Vector2.RIGHT.rotated(global_rotation) * delta * speed
-	if global_position.distance_squared_to(target_location) < 5:
+	if global_position.distance_squared_to(target_location) < 10:
 		arrive()
 
 func arrive():
