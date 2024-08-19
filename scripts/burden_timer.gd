@@ -8,18 +8,20 @@ func _ready() -> void:
 
 func _timeout() -> void:	
 	if Global.game_started:
-		if items_spawned >= 3:
-			wait_time = 1.8
-		if items_spawned >= 16:
-			wait_time = 1.3
-		if items_spawned >= 40:
-			wait_time = 1
-		if items_spawned >= 60:
+		if items_spawned >= 4:
+			wait_time = 1.5
+		if items_spawned >= 10:
+			wait_time = 1.2
+		if items_spawned >= 18:
+			wait_time = 0.9
+		if items_spawned >= 35:
 			wait_time = 0.7
-		if items_spawned >= 100:
+		if items_spawned >= 80:
 			wait_time = 0.5
-		if items_spawned >= 170:
+		if items_spawned >= 130:
 			wait_time = 0.2
+		if items_spawned >= 180:
+			wait_time = 0.15
 		print("objects: %s" % items_spawned)
 		print("wait time: %s" % wait_time)
 		$"../Controllers/ObjectController".launch_random_scarab()
