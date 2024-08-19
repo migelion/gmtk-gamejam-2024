@@ -23,7 +23,7 @@ var max_diff: float = 140
 var time_score: float = 0
 var high_score: float = 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Lose condition
 	if weight_diff > max_diff and game_started:
 		var instance = game_over.instantiate()

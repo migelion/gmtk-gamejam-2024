@@ -14,7 +14,7 @@ func _ready() -> void:
 	if not Global.first_time:
 		skip()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_released(&"diag_continue") and Global.mouse_input and enabled:
 		if not typing:
 			line = await resource.get_next_dialogue_line(line.next_id)

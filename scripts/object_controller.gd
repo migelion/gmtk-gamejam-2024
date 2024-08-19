@@ -122,6 +122,8 @@ func place_object_in_scene(object: Node2D, position: int = 1) -> void:
 			PhysicsServer2D.BODY_STATE_TRANSFORM,
 			Transform2D.IDENTITY.translated(pos)
 		)
+		if rigidObject.has_method("enable_collision"):
+			rigidObject.enable_collision()
 		rigidObject.freeze = false
 	else:
 		object.position = pos

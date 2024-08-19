@@ -1,8 +1,8 @@
 extends Node
 
 @export var floorLevel: float = 750
-var parent
-var objectController
+var parent: Node2D
+var objectController: Node
 
 func _ready() -> void:
 	parent = get_parent() as Node2D

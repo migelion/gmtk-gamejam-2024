@@ -1,6 +1,6 @@
 extends Node
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var left_y = %LeftPlate.position.y
 	var right_y = %RightPlate.position.y
 	
