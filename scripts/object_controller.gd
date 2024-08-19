@@ -17,8 +17,19 @@ func add_script(node: Node, scriptNode: Node):
 	scriptCopy.objectController = self
 	node.add_child(scriptCopy)
 
+func create_scarab(target: Node2D, despawnTarget: Node2D) -> Node2D:
+	var scarab = scarabScene.instantiate()
+	scarab.target = target
+	scarab.despawnTarget = despawnTarget
+	return scarab
+
+func launch_scarab(scarab: Node2D, spawnPoint: Vector2) -> void:
+	scene.add_child(scarab)
+	scarab.global_position = spawnPoint
+	scarab.look_at(scarab.target.global_position)
+
 enum Side { LEFT, RIGHT }
-func launch_scarab(object: Node2D, side: Side):
+func launch_scarab_drop(object: Node2D, side: Side):
 	var target: Node2D
 	var despawnTarget: Node2D
 	var spawn: Node2D
@@ -31,14 +42,10 @@ func launch_scarab(object: Node2D, side: Side):
 			target = %ScarabDropRight
 			despawnTarget = %ScarabDespawnRight
 			spawn = %ScarabSpawnRight
-	var scarab = scarabScene.instantiate()
-	scarab.target = target
-	scarab.despawnTarget = despawnTarget
+	var scarab = create_scarab(target, despawnTarget)
 	scarab.carry(object)
 	scarab.state = Scarab.State.DELIVERING
-	scene.add_child(scarab)
-	scarab.global_position = spawn.global_position
-	scarab.look_at(scarab.target.global_position)
+	launch_scarab(scarab, spawn.global_position)
 
 func launch_random_burden() -> void:
 	var choice = rng.randf_range(0, totalSpawnRate)
@@ -57,7 +64,7 @@ func launch_random_burden() -> void:
 		side = Side.LEFT
 	else:
 		side = Side.RIGHT
-	launch_scarab(duplicated, side)
+	launch_scarab_drop(duplicated, side)
 
 
 func place_object_in_scene(object: Node2D, position: int = 1) -> void:
