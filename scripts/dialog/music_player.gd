@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-var muted: bool = false
+#var muted: bool = false
 
 func _ready() -> void:
 	Global.play_music.connect(play_music)
@@ -8,10 +8,9 @@ func _ready() -> void:
 
 func play_music() -> void:
 	play()
+	toggle_music()
 
 func toggle_music() -> void:
-	muted = !muted
-	
-	match muted:
+	match Global.music_muted:
 		true: volume_db = -80
 		false: volume_db = -10

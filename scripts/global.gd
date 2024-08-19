@@ -17,6 +17,7 @@ var scales_visible: bool = false
 var inv_visible: bool = false
 var game_started: bool = false
 var first_time: bool = true
+var music_muted: bool = false
 
 var weight_diff: float
 var max_diff: float = 140
