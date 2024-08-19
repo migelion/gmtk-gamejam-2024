@@ -123,8 +123,6 @@ script = ExtResource("14_l6b5e")
 unique_name_in_owner = true
 script = ExtResource("15_xv5my")
 
-[node name="Node2D" type="Node2D" parent="."]
-
 [node name="ScarabDropRight" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(1228, 332)

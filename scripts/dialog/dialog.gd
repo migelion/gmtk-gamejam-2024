@@ -11,7 +11,7 @@ func _ready() -> void:
 	line = await resource.get_next_dialogue_line("start")
 	new_line()
 	
-	if !Global.first_time:
+	if not Global.first_time:
 		skip()
 
 func _process(delta: float) -> void:
@@ -38,7 +38,7 @@ func skip() -> void:
 		Global.show_scales()
 	if not Global.inv_visible:
 		Global.show_inventory()
-	if !$MusicPlayer.playing:
+	if not $MusicPlayer.playing:
 		$MusicPlayer.play_music()
 	end()
 
