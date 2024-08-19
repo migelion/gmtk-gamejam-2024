@@ -10,7 +10,7 @@ corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgi40"]
-size = Vector2(683, 107)
+size = Vector2(150, 2.00096)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj3pb"]
 size = Vector2(58, 0.999634)
@@ -39,7 +39,7 @@ position = Vector2(-223, 105)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-position = Vector2(-98.5, 32.5001)
+position = Vector2(168, -19.9994)
 shape = SubResource("RectangleShape2D_tgi40")
 
 [node name="Right" type="StaticBody2D" parent="."]
