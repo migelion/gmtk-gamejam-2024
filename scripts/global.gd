@@ -18,7 +18,7 @@ var game_started: bool = false
 var first_time: bool = true
 
 var weight_diff: float
-var max_diff: float = 60
+var max_diff: float = 200
 
 func _process(delta: float) -> void:
 	if weight_diff > max_diff and game_started:
@@ -27,13 +27,11 @@ func _process(delta: float) -> void:
 		add_child(instance)
 		game_started = false
 		
-
 func restart_game() -> void:
 	weight_diff = 0
 	game_started = true
 	get_tree().change_scene_to_file("res://scenes/dialog.tscn")
 	show_scales()
-	#show_inventory()
 
 # Dialog functions
 func set_mouse_input(cond: bool) -> void:
