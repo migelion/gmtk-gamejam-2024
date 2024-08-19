@@ -18,7 +18,7 @@ func _timeout() -> void:
 			wait_time = 0.7
 		if items_spawned >= 100:
 			wait_time = 0.5
-		if items_spawned >= 200:
+		if items_spawned >= 170:
 			wait_time = 0.2
 		print("objects: %s" % items_spawned)
 		print("wait time: %s" % wait_time)
