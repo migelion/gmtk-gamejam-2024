@@ -66,6 +66,41 @@ func launch_random_burden() -> void:
 		side = Side.RIGHT
 	launch_scarab_drop(duplicated, side)
 
+func launch_random_scavenger() -> void:
+	var liveBurdens = scene.get_children().filter(is_burden)
+	var idx = rng.randi_range(0, liveBurdens.size() - 1)
+	var target = liveBurdens[idx]
+	print ("Scavenging: ", target.name)
+	var side
+	if (rng.randi() % 2):
+		side = Side.LEFT
+	else:
+		side = Side.RIGHT
+	var despawnTarget: Node2D
+	var spawn: Node2D
+	match (side):
+		Side.LEFT:
+			despawnTarget = %ScarabDespawnRight
+			spawn = %ScarabSpawnLeft
+		Side.RIGHT:
+			despawnTarget = %ScarabDespawnRight
+			spawn = %ScarabSpawnRight
+	var scarab = create_scarab(target, despawnTarget)
+	scarab.state = Scarab.State.SCAVENGING
+	launch_scarab(scarab, spawn.global_position)
+
+func is_burden(obj):
+	var asBurden = obj as Burden
+	return asBurden != null
+
+func launch_random_scarab() -> void:
+	var targetCount = 15
+	var liveBurdens = scene.get_children().filter(is_burden)
+	var createRand = rng.randi_range(0, targetCount + liveBurdens.size() - 1)
+	if createRand < targetCount:
+		launch_random_burden()
+	else:
+		launch_random_scavenger()
 
 func place_object_in_scene(object: Node2D, position: int = 1) -> void:
 	var pos: Vector2

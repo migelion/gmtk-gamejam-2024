@@ -16,5 +16,5 @@ func _timeout() -> void:
 			wait_time = 1
 		print("objects: %s" % items_spawned)
 		print("wait time: %s" % wait_time)
-		$"../Controllers/ObjectController".launch_random_burden()
+		$"../Controllers/ObjectController".launch_random_scarab()
 		items_spawned += 1
