@@ -9,9 +9,9 @@ func _on_body_entered(body: Node) -> void:
 		Global.play_impact_sound.emit()
 
 func disable_collision() -> void:
-	if self.has_node("CollisionShape2D"):
-		$CollisionShape2D.disabled = true
+	if self.has_node("Collision"):
+		$Collision.disabled = true
 
 func enable_collision() -> void:
-	if self.has_node("CollisionShape2D"):
-		$CollisionShape2D.disabled = false
+	if self.has_node("Collision"):
+		$Collision.disabled = false

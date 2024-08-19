@@ -10,7 +10,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oflb7"]
-size = Vector2(470, 125.5)
+size = Vector2(370, 125.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgi40"]
 size = Vector2(683, 107)
@@ -25,7 +25,7 @@ position = Vector2(249, 327)
 z_index = -1
 offset_left = -205.0
 offset_top = 150.0
-offset_right = 149.0
+offset_right = 45.0
 offset_bottom = 349.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_us16u")
@@ -34,7 +34,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_us16u")
 position = Vector2(11, 465)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
-position = Vector2(-84, -55.25)
+position = Vector2(-134, -55.25)
 shape = SubResource("RectangleShape2D_oflb7")
 
 [node name="Left" type="StaticBody2D" parent="."]
@@ -50,5 +50,5 @@ position = Vector2(219, 105)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-position = Vector2(146, 64.9998)
+position = Vector2(145.999, 166.001)
 shape = SubResource("RectangleShape2D_xgafv")

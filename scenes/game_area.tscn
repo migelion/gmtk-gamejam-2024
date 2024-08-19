@@ -67,7 +67,7 @@ script = ExtResource("9_tgafl")
 script = SubResource("GDScript_8vbm7")
 
 [node name="Scale" parent="." instance=ExtResource("16_if4jh")]
-position = Vector2(888, 240)
+position = Vector2(740, 240)
 
 [node name="RespawnPoint1" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -94,7 +94,7 @@ script = ExtResource("13_tnuiq")
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("11_wbjux")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Offscreen/Burdens/Marble"]
+[node name="Collision" type="CollisionShape2D" parent="Offscreen/Burdens/Marble"]
 shape = SubResource("CircleShape2D_75dwd")
 
 [node name="Coin" type="RigidBody2D" parent="Offscreen/Burdens"]
@@ -109,7 +109,7 @@ script = ExtResource("13_tnuiq")
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("12_n7tvn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Offscreen/Burdens/Coin"]
+[node name="Collision" type="CollisionShape2D" parent="Offscreen/Burdens/Coin"]
 shape = SubResource("CircleShape2D_7qbqu")
 
 [node name="Cat" type="RigidBody2D" parent="Offscreen/Burdens"]
@@ -123,7 +123,7 @@ spawnRate = 0.1
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_tjk87")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Offscreen/Burdens/Cat"]
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Cat"]
 polygon = PackedVector2Array(23, -7, 29, -37, 4, -35, 6, -20, -18, -10, -29, 35, 18, 35, 14, 13)
 
 [node name="Scripts" type="Node" parent="Offscreen"]
@@ -138,11 +138,11 @@ script = ExtResource("15_xv5my")
 
 [node name="ScarabDropRight" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1228, 332)
+position = Vector2(1080, 288)
 
 [node name="ScarabDropLeft" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(516, 332)
+position = Vector2(368, 332)
 
 [node name="ScarabSpawnLeft" type="Node2D" parent="."]
 unique_name_in_owner = true
