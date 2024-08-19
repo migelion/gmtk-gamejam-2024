@@ -1,6 +1,6 @@
 extends Node
 
-@export var balance_limit: float = 250
+@export var balance_limit: float = 230
 
 var diff: float
 
