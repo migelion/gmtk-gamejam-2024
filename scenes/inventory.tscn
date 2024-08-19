@@ -2,17 +2,21 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us16u"]
 bg_color = Color(0.109804, 0.0666667, 0.0352941, 0.85098)
+border_width_left = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.576089, 0.466806, 0.400729, 1)
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oflb7"]
-size = Vector2(368.5, 125.5)
+size = Vector2(470, 125.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgi40"]
-size = Vector2(815, 107)
+size = Vector2(683, 107)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgafv"]
-size = Vector2(540, 15.3645)
+size = Vector2(200, 15.3645)
 
 [node name="Inventory" type="Node2D"]
 position = Vector2(249, 327)
@@ -20,31 +24,31 @@ position = Vector2(249, 327)
 [node name="Panel" type="Panel" parent="."]
 z_index = -1
 offset_left = -205.0
-offset_top = -182.0
+offset_top = 150.0
 offset_right = 149.0
 offset_bottom = 349.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_us16u")
 
-[node name="Bottom" type="StaticBody2D" parent="Panel"]
-position = Vector2(216, 647)
+[node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2(11, 465)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Bottom"]
-position = Vector2(-35.25, -55.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(-84, -55.25)
 shape = SubResource("RectangleShape2D_oflb7")
 
-[node name="Left" type="StaticBody2D" parent="Panel"]
-position = Vector2(-18, 287)
+[node name="Left" type="StaticBody2D" parent="."]
+position = Vector2(-223, 105)
 rotation = 1.57079
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Left"]
-position = Vector2(-32.5001, 32.5001)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(-98.5, 32.5001)
 shape = SubResource("RectangleShape2D_tgi40")
 
-[node name="Right" type="StaticBody2D" parent="Panel"]
-position = Vector2(424, 287)
+[node name="Right" type="StaticBody2D" parent="."]
+position = Vector2(219, 105)
 rotation = 1.57079
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/Right"]
-position = Vector2(-24.0001, 64.9999)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(146, 64.9998)
 shape = SubResource("RectangleShape2D_xgafv")
