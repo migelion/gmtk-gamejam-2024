@@ -1,9 +1,9 @@
 extends Node
 
-func _on_marble_impact() -> void:
-	%ImpactSound.play()	
+func _ready() -> void:
+	Global.play_impact_sound.connect(play_impact_sound)
 
-func _on_coin_impact() -> void:
+func play_impact_sound() -> void:
 	%ImpactSound.play()
 
 func _on_mouse_controllable_pickup() -> void:

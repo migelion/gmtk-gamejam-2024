@@ -2,6 +2,7 @@ extends Node
 
 signal focus
 signal play_music
+signal play_impact_sound
 signal hide_sprite
 
 var scales = preload("res://scenes/game_area.tscn")
