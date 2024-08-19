@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpgmoq8irj1h"]
+[gd_scene load_steps=4 format=3 uid="uid://dpgmoq8irj1h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us16u"]
 bg_color = Color(0.109804, 0.0666667, 0.0352941, 0.85098)
@@ -6,17 +6,14 @@ border_width_left = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.576089, 0.466806, 0.400729, 1)
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oflb7"]
-size = Vector2(352, 125.5)
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgi40"]
 size = Vector2(683, 107)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgafv"]
-size = Vector2(200, 1.99999)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj3pb"]
+size = Vector2(58, 0.999634)
 
 [node name="Inventory" type="Node2D"]
 position = Vector2(249, 327)
@@ -24,8 +21,8 @@ position = Vector2(249, 327)
 [node name="Panel" type="Panel" parent="."]
 z_index = -1
 offset_left = -205.0
-offset_top = 150.0
-offset_right = 45.0
+offset_top = 198.0
+offset_right = 8.0
 offset_bottom = 349.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_us16u")
@@ -33,9 +30,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_us16u")
 [node name="Bottom" type="StaticBody2D" parent="."]
 position = Vector2(11, 465)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bottom"]
 position = Vector2(-143, -55.25)
-shape = SubResource("RectangleShape2D_oflb7")
+polygon = PackedVector2Array(-69, -134.75, -69, -59.75, -42, -39.75, 14, -28.75, 80, -35.75, 115, -53.75, 135, -78.75, 139, -158.75, 138, -166.75, 135, -135.75, 123, -107.75, 107, -87.75, 90, -75.75, 67, -65.75, 39, -62.75, 10, -63.75, -15, -72.75, -37, -86.75, -54, -106.75, -66, -127.75)
 
 [node name="Left" type="StaticBody2D" parent="."]
 position = Vector2(-223, 105)
@@ -50,5 +47,5 @@ position = Vector2(219, 105)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-position = Vector2(145.999, 175.001)
-shape = SubResource("RectangleShape2D_xgafv")
+position = Vector2(121.999, 212.501)
+shape = SubResource("RectangleShape2D_pj3pb")
