@@ -51,7 +51,6 @@ func turn_toward(target_location, delta):
 	if (target_rotation < current_rotation - PI):
 		target_rotation += 2 * PI
 	var max_change = delta * speed / turnRadius
-	print (target_rotation, ", ", current_rotation, ", ", max_change)
 	if abs(target_rotation - current_rotation) < max_change:
 		global_rotation = target_rotation
 	else:
