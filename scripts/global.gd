@@ -18,7 +18,7 @@ var game_started: bool = false
 var first_time: bool = true
 
 var weight_diff: float
-var max_diff: float = 200
+var max_diff: float = 170
 
 func _process(delta: float) -> void:
 	if weight_diff > max_diff and game_started:

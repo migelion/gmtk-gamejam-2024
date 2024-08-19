@@ -5,4 +5,5 @@ func _process(delta: float) -> void:
 	var right_y = %RightPlate.position.y
 	
 	Global.weight_diff = abs(left_y - right_y)
-	$Label.text = "%10.1f" % Global.weight_diff
+	var percent = 100 - (Global.weight_diff / Global.max_diff * 100)
+	$Label.text = "%10.0f%%" % percent
