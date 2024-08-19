@@ -4,6 +4,7 @@ var rng = RandomNumberGenerator.new()
 var scene: Node
 var totalSpawnRate
 var burdens
+var scarabScene = load("res://scenes/scarab.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,7 +29,15 @@ func launch_random_burden() -> void:
 	var duplicated = toLaunch.duplicate()
 	add_script(duplicated, %MouseControllable)
 	add_script(duplicated, %Respawns)
-	place_object_in_scene(duplicated)
+	var scarab = scarabScene.instantiate()
+	scarab.target = %ScarabDropRight
+	scarab.despawnTarget = %ScarabDespawnRight
+	scarab.carry(duplicated)
+	scarab.state = Scarab.State.DELIVERING
+	scene.add_child(scarab)
+	scarab.global_position = %ScarabSpawnRight.global_position
+	scarab.look_at(scarab.target.global_position)
+
 
 func place_object_in_scene(object: Node2D, position: int = 1) -> void:
 	var pos: Vector2
