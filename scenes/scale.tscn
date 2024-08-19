@@ -76,10 +76,11 @@ lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Left/LeftPlate"]
 position = Vector2(0, -123)
-scale = Vector2(1.75, 1.25)
+scale = Vector2(2.54, 1.25)
 texture = ExtResource("2_b8g2o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Left/LeftPlate"]
+scale = Vector2(1.5, 1)
 polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, 0, 22, -110, 10)
 
 [node name="Spring" type="Node2D" parent="Left"]
@@ -114,10 +115,11 @@ lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Right/RightPlate"]
 position = Vector2(0, -123)
-scale = Vector2(1.75, 1.25)
+scale = Vector2(2.54, 1.25)
 texture = ExtResource("2_b8g2o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Right/RightPlate"]
+scale = Vector2(1.5, 1)
 polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, 0, 22, -110, 10)
 
 [node name="Spring" type="Node2D" parent="Right"]
