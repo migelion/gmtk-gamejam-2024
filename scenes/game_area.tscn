@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=31 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
@@ -9,9 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://dpxf3jei7akxv" path="res://assets/sfx/other sounds/pickup2.wav" id="5_twir8"]
 [ext_resource type="Script" path="res://scripts/mute_music.gd" id="7_kpwkm"]
 [ext_resource type="Texture2D" uid="uid://bfuai4toqn5wq" path="res://assets/ui/music-on.svg" id="7_m6dyt"]
+[ext_resource type="AudioStream" uid="uid://bfj65upflajvq" path="res://assets/sfx/scale hits/hit_heavy_1.wav" id="7_syo52"]
 [ext_resource type="Texture2D" uid="uid://cxxyqsxr60fac" path="res://assets/ui/music-off.svg" id="8_02akh"]
+[ext_resource type="AudioStream" uid="uid://d3ecs6kmqmbbm" path="res://assets/sfx/scale hits/hit_heavy_2.wav" id="8_bbma6"]
 [ext_resource type="Script" path="res://scripts/burden_timer.gd" id="9_tgafl"]
-[ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="11_wbjux"]
 [ext_resource type="Script" path="res://scripts/burden.gd" id="13_tnuiq"]
 [ext_resource type="Texture2D" uid="uid://c53jdhrnui2yf" path="res://assets/sprites/burdens/ankh.png" id="14_a4t8n"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="14_l6b5e"]
@@ -22,11 +23,18 @@
 [ext_resource type="Texture2D" uid="uid://cwep1u0gnahao" path="res://assets/sprites/burdens/feather.png" id="17_bcm0f"]
 [ext_resource type="Texture2D" uid="uid://bomudkk3gn0gu" path="res://assets/sprites/burdens/pen.png" id="18_sks41"]
 [ext_resource type="Texture2D" uid="uid://dpfl6d78gprcy" path="res://assets/sprites/burdens/plane.png" id="20_1v6vy"]
+[ext_resource type="Texture2D" uid="uid://dhmwcmfbjful7" path="res://assets/sprites/burdens/player.png" id="20_24oks"]
+[ext_resource type="Texture2D" uid="uid://btxcqtcon13e8" path="res://assets/sprites/burdens/portrait.png" id="21_can5j"]
+[ext_resource type="Texture2D" uid="uid://lu6brkl4i8xl" path="res://assets/sprites/burdens/pot.png" id="22_u600m"]
+[ext_resource type="Texture2D" uid="uid://u0s4gwdsmgyo" path="res://assets/sprites/burdens/slab.png" id="23_kkeh5"]
+[ext_resource type="Texture2D" uid="uid://cql4bpan2uif" path="res://assets/sprites/burdens/stone.png" id="24_6gi2q"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nysj8"]
-streams_count = 2
+streams_count = 4
 stream_0/stream = ExtResource("3_txwsj")
 stream_1/stream = ExtResource("4_5dpx3")
+stream_2/stream = ExtResource("7_syo52")
+stream_3/stream = ExtResource("8_bbma6")
 
 [sub_resource type="GDScript" id="GDScript_8vbm7"]
 
@@ -112,7 +120,7 @@ position = Vector2(0, -42)
 unique_name_in_owner = true
 
 [node name="Ankh" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(48, 0)
+position = Vector2(40, 0)
 mass = 1.15
 freeze = true
 contact_monitor = true
@@ -125,7 +133,7 @@ texture = ExtResource("14_a4t8n")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Ankh"]
 scale = Vector2(0.759603, 0.759603)
-polygon = PackedVector2Array(-8, -37, 0, -38, 6, -35, 10, -28, 9, -18, 6, -10, 16, -11, 18, -6, 16, -1, 9, -2, 1, -3, 3, 34, -4, 37, -10, 34, -7, -3, -22, -1, -25, -7, -23, -12, -13, -11, -17, -21, -13, -32)
+polygon = PackedVector2Array(-8, -37, 0, -38, 6, -35, 10, -28, 9, -18, 6.58239, -10.5318, 16, -11, 18, -6, 16, -1, 10.5318, -1.31648, 2.63295, -1.31648, 3, 34, -4, 37, -10, 34, -7.89886, -1.31648, -22, -1, -25, -7, -23, -12, -14.4812, -11.8483, -17, -21, -13, -32)
 
 [node name="Candles" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(100, 0)
@@ -143,7 +151,7 @@ texture = ExtResource("15_3qy31")
 polygon = PackedVector2Array(-5, -26, -7, -17, -10, -15, -14, -11, -15, 0, -19, 3, -18, 25, 13, 26, 14, 13, 13, 6, 9, 2, 6, -13)
 
 [node name="Car" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(156, 0)
+position = Vector2(369, 0)
 mass = 5.0
 freeze = true
 contact_monitor = true
@@ -157,10 +165,10 @@ scale = Vector2(0.116779, 0.116779)
 texture = ExtResource("16_epqeu")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Car"]
-polygon = PackedVector2Array(4, -8, -19, -7, -22, -3, -22, 6, -25, 7, -25, 15, -13, 15, -9, 25, 0, 29, 11, 26, 14, 16, 48, 16, 49, 21, 53, 28, 63, 30, 71, 27, 74, 16, 93, 16, 95, 1, 92, -7, 68, -7, 63, -13, 49, -9, 50, -15, 43, -16, 40, -7, 18, -8, 21, -26, 16, -29)
+polygon = PackedVector2Array(3, -9, -19, -7, -22, -3, -22, 6, -25, 7, -25, 15, -13, 15, -9, 25, 0, 29, 11, 26, 16, 17, 45, 17, 49, 21, 53, 28, 63, 30, 71, 27, 75, 17, 93, 16, 95, 1, 92, -7, 68, -8, 63, -13, 50, -10, 50, -15, 43, -16, 37, -8, 22, -10, 21, -26, 16, -29)
 
 [node name="Feather" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(288, 0)
+position = Vector2(99, -55)
 mass = 0.1
 freeze = true
 contact_monitor = true
@@ -173,10 +181,10 @@ scale = Vector2(0.128, 0.128)
 texture = ExtResource("17_bcm0f")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Feather"]
-polygon = PackedVector2Array(-23, -12, -26, -10, -23, 3, -15, 11, -7, 13, -6, 17, 10, 17, 20, 14, 27, 14, 27, 10, 2, 2)
+polygon = PackedVector2Array(-23, -12, -26, -10, -23, 3, -15, 11, -8, 13, -6, 17, 10, 17, 20, 14, 27, 14, 27, 10, 2, 2)
 
 [node name="Pen" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(0, -71)
+position = Vector2(36, -52)
 mass = 1.15
 freeze = true
 contact_monitor = true
@@ -188,10 +196,10 @@ scale = Vector2(0.128, 0.128)
 texture = ExtResource("18_sks41")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Pen"]
-polygon = PackedVector2Array(-5, -6, -23, -6, -26, -3, -34, -2, -33, 4, 10, 4, 23, 5, 34, 0, 25, -4, 9, -4, -4, -3)
+polygon = PackedVector2Array(-5, -6, -23, -6, -27, -4, -34, -2, -33, 4, 10, 5, 18, 5, 27, 4, 34, 0, 26, -4, 18, -5, 10, -5, 0, -5)
 
 [node name="Plane" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(86, -72)
+position = Vector2(373, -72)
 mass = 5.0
 freeze = true
 contact_monitor = true
@@ -205,21 +213,91 @@ scale = Vector2(0.128, 0.128)
 texture = ExtResource("20_1v6vy")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Plane"]
-polygon = PackedVector2Array(-7, -17, -20, -21, -20, -36, -24, -38, -29, -27, -32, -26, -31, -8, -31, 0, -33, 24, -27, 23, -19, 13, -6, 13, -6, 23, 3, 24, 9, 16, 33, 14, 33, 10, 40, 10, 41, 20, 50, 20, 51, 9, 66, 8, 76, 13, 88, 12, 89, 3, 87, -22, 82, -22, 61, -3, 50, -16, 25, -26, 3, -30)
+polygon = PackedVector2Array(-9, -19, -18, -21, -20, -36, -24, -38, -29, -27, -32, -26, -31, -8, -31, 0, -33, 24, -27, 23, -17, 13, -8, 13, -6, 23, 3, 24, 9, 16, 33, 14, 34, 11, 38, 10, 41, 20, 50, 20, 53, 9, 63, 8, 76, 13, 88, 12, 89, 3, 87, -22, 82, -22, 61, -5, 50, -16, 25, -26, 3, -30)
 
-[node name="Marble" type="RigidBody2D" parent="Offscreen/Burdens"]
-mass = 1.15
+[node name="Player" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(196, -7)
+mass = 2.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
+spawnRate = 0.8
 
-[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Marble"]
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Player"]
+position = Vector2(1.14441e-05, -2.86102e-06)
+scale = Vector2(0.118551, 0.118551)
+texture = ExtResource("20_24oks")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Player"]
+scale = Vector2(1.34495, 1.34495)
+polygon = PackedVector2Array(-9, -28, -19, -22, -20, -8, -22, -2, -22, 26, -15, 27, -13.6701, 22.2139, 16.2332, 21.3595, 19, 27, 23, 27, 24, -2, 15, -12, 1, -19)
+
+[node name="Portrait" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(261, -3)
+mass = 2.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+spawnRate = 0.8
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Portrait"]
+scale = Vector2(0.113157, 0.113157)
+texture = ExtResource("21_can5j")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Portrait"]
+scale = Vector2(1.22186, 1.22186)
+polygon = PackedVector2Array(-19, -29, -19, 25, 23, 26, 23, -29)
+
+[node name="Pot" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(263, -120)
+mass = 2.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+spawnRate = 0.8
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Pot"]
+scale = Vector2(0.108054, 0.108054)
+texture = ExtResource("22_u600m")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Pot"]
+scale = Vector2(0.810188, 0.810188)
+polygon = PackedVector2Array(-21, -26, -20, -1, -9, 26, 1.23428, 29.6228, 15, 27, 25, -2, 19, -28)
+
+[node name="Slab" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(268, -74)
+mass = 2.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+spawnRate = 0.8
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Slab"]
 scale = Vector2(0.128, 0.128)
-texture = ExtResource("11_wbjux")
+texture = ExtResource("23_kkeh5")
 
-[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Marble"]
-polygon = PackedVector2Array(-4, -15, -11, 11, 15, 6)
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Slab"]
+polygon = PackedVector2Array(-28, -6, -29, 11, 28, 10, 29, -6)
+
+[node name="Stone" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(196, -78)
+mass = 2.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+spawnRate = 0.8
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Stone"]
+scale = Vector2(0.128, 0.128)
+texture = ExtResource("24_6gi2q")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Stone"]
+polygon = PackedVector2Array(-7, -20, -22, -16, -29, -2, -28, 13, -22, 19, 2, 20, 28, 16, 32, 6, 32, -5, 29, -13, 23, -19)
 
 [node name="Scripts" type="Node" parent="Offscreen"]
 
@@ -258,5 +336,9 @@ position = Vector2(948, -126)
 [connection signal="body_entered" from="Offscreen/Burdens/Feather" to="Offscreen/Burdens/Feather" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Pen" to="Offscreen/Burdens/Pen" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Plane" to="Offscreen/Burdens/Plane" method="_on_body_entered"]
-[connection signal="body_entered" from="Offscreen/Burdens/Marble" to="Offscreen/Burdens/Marble" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Player" to="Offscreen/Burdens/Player" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Portrait" to="Offscreen/Burdens/Portrait" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Pot" to="Offscreen/Burdens/Pot" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Slab" to="Offscreen/Burdens/Slab" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Stone" to="Offscreen/Burdens/Stone" method="_on_body_entered"]
 [connection signal="pickup" from="Offscreen/Scripts/MouseControllable" to="Controllers/SoundController" method="_on_mouse_controllable_pickup"]
