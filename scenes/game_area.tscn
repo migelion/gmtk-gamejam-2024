@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=23 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
+[ext_resource type="FontFile" uid="uid://50tn5pcvxbmi" path="res://assets/fonts/Merriweather-Regular.ttf" id="2_8lcxm"]
 [ext_resource type="AudioStream" uid="uid://c4084t05cw725" path="res://assets/sfx/scale hits/hit_light_1.wav" id="3_txwsj"]
 [ext_resource type="Script" path="res://scripts/sound_controller.gd" id="3_wvbqk"]
 [ext_resource type="AudioStream" uid="uid://dadackukt5t1h" path="res://assets/sfx/scale hits/hit_light_2.wav" id="4_5dpx3"]
@@ -44,6 +45,9 @@ offset_left = 16.0
 offset_top = 8.0
 offset_right = 57.0
 offset_bottom = 31.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_8lcxm")
+theme_override_font_sizes/font_size = 17
 text = "Time: 0.0
 High Score: 0.0"
 

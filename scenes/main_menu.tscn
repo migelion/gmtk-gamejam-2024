@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtc3lqfj7qp17"]
+[gd_scene load_steps=6 format=3 uid="uid://dtc3lqfj7qp17"]
 
 [ext_resource type="Script" path="res://scripts/main_menu/start_button.gd" id="1_gukbc"]
 [ext_resource type="AudioStream" uid="uid://dbypxcnw86v83" path="res://assets/sfx/menu sounds/menu2.wav" id="1_lkidb"]
 [ext_resource type="Texture2D" uid="uid://c6x6we7amfhm" path="res://assets/main_menu_bg.png" id="2_lasib"]
+[ext_resource type="FontFile" uid="uid://50tn5pcvxbmi" path="res://assets/fonts/Merriweather-Regular.ttf" id="3_cc6m8"]
+[ext_resource type="FontFile" uid="uid://7m6k17oeftrj" path="res://assets/fonts/Anubismythicalserif-lxdLy.otf" id="4_kjsw8"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -29,16 +31,20 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_cc6m8")
 theme_override_font_sizes/font_size = 25
 text = "Start Game"
 script = ExtResource("1_gukbc")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 432.0
-offset_top = 251.0
-offset_right = 847.0
-offset_bottom = 339.0
-theme_override_font_sizes/font_size = 64
+offset_left = 368.0
+offset_top = 200.0
+offset_right = 917.0
+offset_bottom = 327.0
+theme_override_colors/font_color = Color(0.898627, 0.837893, 0.572963, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_kjsw8")
+theme_override_font_sizes/font_size = 84
 text = "Sacred Scales"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

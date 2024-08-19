@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlfwq8d4t1fgo"]
+[gd_scene load_steps=8 format=3 uid="uid://dlfwq8d4t1fgo"]
 
 [ext_resource type="Texture2D" uid="uid://bcpqw1rbfe5wu" path="res://assets/sprites/Arm.svg" id="1_f3ynw"]
 [ext_resource type="Texture2D" uid="uid://dva3xxkavubfe" path="res://assets/sprites/Plate2.png" id="2_b8g2o"]
+[ext_resource type="FontFile" uid="uid://50tn5pcvxbmi" path="res://assets/fonts/Merriweather-Regular.ttf" id="2_bw15n"]
 [ext_resource type="Script" path="res://scripts/plate_controller.gd" id="7_g0sej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8hrv"]
@@ -20,20 +21,38 @@ unique_name_in_owner = true
 position = Vector2(-32, -208)
 script = ExtResource("7_g0sej")
 
+[node name="BalanceLabel" type="Label" parent="PlateController"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = 8.0
+offset_right = 114.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_bw15n")
+theme_override_font_sizes/font_size = 31
+text = "100"
+metadata/_edit_use_anchors_ = true
+
 [node name="Label" type="Label" parent="PlateController"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -29.0
-offset_top = -1.0
-offset_right = 51.0
-offset_bottom = 43.0
+offset_left = -105.0
+offset_top = 8.0
+offset_right = 114.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_bw15n")
 theme_override_font_sizes/font_size = 31
-text = "Balance: 100%"
+text = "Balance:           %"
 metadata/_edit_use_anchors_ = true
 
 [node name="Arm" type="Node2D" parent="."]

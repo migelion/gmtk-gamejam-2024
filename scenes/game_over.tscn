@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ka384l7jy6r"]
+[gd_scene load_steps=6 format=3 uid="uid://ka384l7jy6r"]
 
 [ext_resource type="Script" path="res://scripts/restart_button.gd" id="1_dm1lr"]
 [ext_resource type="AudioStream" uid="uid://dbypxcnw86v83" path="res://assets/sfx/menu sounds/menu2.wav" id="1_od8cm"]
+[ext_resource type="FontFile" uid="uid://50tn5pcvxbmi" path="res://assets/fonts/Merriweather-Regular.ttf" id="2_grgpx"]
 [ext_resource type="Script" path="res://scripts/gameover_time.gd" id="3_jntt7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44bql"]
@@ -23,6 +24,7 @@ offset_left = 552.0
 offset_top = 432.0
 offset_right = 728.0
 offset_bottom = 496.0
+theme_override_fonts/font = ExtResource("2_grgpx")
 theme_override_font_sizes/font_size = 31
 text = "Restart"
 script = ExtResource("1_dm1lr")
@@ -32,6 +34,7 @@ offset_left = 440.0
 offset_top = 224.0
 offset_right = 845.0
 offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("2_grgpx")
 theme_override_font_sizes/font_size = 71
 text = "Game Over!"
 
@@ -40,6 +43,7 @@ offset_left = 552.0
 offset_top = 344.0
 offset_right = 695.0
 offset_bottom = 388.0
+theme_override_fonts/font = ExtResource("2_grgpx")
 theme_override_font_sizes/font_size = 31
 text = "Score: 0.0"
 script = ExtResource("3_jntt7")
