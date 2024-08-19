@@ -3,6 +3,7 @@ extends RigidBody2D
 class_name Burden
 
 @export var spawnRate: float = 1
+@export var makes_sound: bool = true
 
 func _on_body_entered(_body: Node) -> void:
 	if linear_velocity.y > 50:

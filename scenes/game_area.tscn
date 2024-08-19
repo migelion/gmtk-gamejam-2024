@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=30 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://dd00lakfjn8xa" path="res://assets/sprites/burdens/car.png" id="16_epqeu"]
 [ext_resource type="PackedScene" uid="uid://dlfwq8d4t1fgo" path="res://scenes/scale.tscn" id="16_if4jh"]
 [ext_resource type="Texture2D" uid="uid://cwep1u0gnahao" path="res://assets/sprites/burdens/feather.png" id="17_bcm0f"]
-[ext_resource type="Texture2D" uid="uid://bomudkk3gn0gu" path="res://assets/sprites/burdens/pen.png" id="18_sks41"]
 [ext_resource type="Texture2D" uid="uid://dpfl6d78gprcy" path="res://assets/sprites/burdens/plane.png" id="20_1v6vy"]
 [ext_resource type="Texture2D" uid="uid://dhmwcmfbjful7" path="res://assets/sprites/burdens/player.png" id="20_24oks"]
 [ext_resource type="Texture2D" uid="uid://btxcqtcon13e8" path="res://assets/sprites/burdens/portrait.png" id="21_can5j"]
@@ -47,7 +46,6 @@ script = ExtResource("1_kcnws")
 
 [node name="Time" type="Label" parent="Controllers/GameController"]
 unique_name_in_owner = true
-visible = false
 offset_left = 16.0
 offset_top = 8.0
 offset_right = 57.0
@@ -133,7 +131,7 @@ texture = ExtResource("14_a4t8n")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Ankh"]
 scale = Vector2(0.759603, 0.759603)
-polygon = PackedVector2Array(-8, -37, 0, -38, 6, -35, 10, -28, 9, -18, 6.58239, -10.5318, 16, -11, 18, -6, 16, -1, 10.5318, -1.31648, 2.63295, -1.31648, 3, 34, -4, 37, -10, 34, -7.89886, -1.31648, -22, -1, -25, -7, -23, -12, -14.4812, -11.8483, -17, -21, -13, -32)
+polygon = PackedVector2Array(-8, -37, 0, -38, 6, -35, 10, -28, 9.21534, -14.4812, 17.1142, -10.5318, 16, -1, 10.5318, -1.31648, 3.94943, 0, 3, 34, -4, 37, -10, 34, -10.5318, 0, -23.6966, -1.31648, -23.6966, -11.8483, -17.1142, -17.1142, -13, -32)
 
 [node name="Candles" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(100, 0)
@@ -151,7 +149,7 @@ texture = ExtResource("15_3qy31")
 polygon = PackedVector2Array(-5, -26, -7, -17, -10, -15, -14, -11, -15, 0, -19, 3, -18, 25, 13, 26, 14, 13, 13, 6, 9, 2, 6, -13)
 
 [node name="Car" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(369, 0)
+position = Vector2(418, -6)
 mass = 5.0
 freeze = true
 contact_monitor = true
@@ -161,11 +159,13 @@ spawnRate = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Car"]
 position = Vector2(37, 0)
-scale = Vector2(0.116779, 0.116779)
+scale = Vector2(0.173149, 0.173149)
 texture = ExtResource("16_epqeu")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Car"]
-polygon = PackedVector2Array(3, -9, -19, -7, -22, -3, -22, 6, -25, 7, -25, 15, -13, 15, -9, 25, 0, 29, 11, 26, 16, 17, 45, 17, 49, 21, 53, 28, 63, 30, 71, 27, 75, 17, 93, 16, 95, 1, 92, -7, 68, -8, 63, -13, 50, -10, 50, -15, 43, -16, 37, -8, 22, -10, 21, -26, 16, -29)
+position = Vector2(-18, 0)
+scale = Vector2(1.45527, 1.45527)
+polygon = PackedVector2Array(-19.2404, -7.55873, -25, 7, -25, 15, -15.8046, 17.1789, -9, 25, 0, 29, 11, 26, 21.989, 17.1789, 48.101, 21.3019, 53, 28, 63, 30, 71, 27, 75, 17, 96.2021, 15.8046, 94.1406, -6.87157, 70.7773, -8.24589, 63.9057, -13.056, 26.7992, -17.1789, 21, -26, 16, -29)
 
 [node name="Feather" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(99, -55)
@@ -174,32 +174,17 @@ freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
-spawnRate = 0.7
+spawnRate = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Feather"]
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("17_bcm0f")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Feather"]
-polygon = PackedVector2Array(-23, -12, -26, -10, -23, 3, -15, 11, -8, 13, -6, 17, 10, 17, 20, 14, 27, 14, 27, 10, 2, 2)
-
-[node name="Pen" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(36, -52)
-mass = 1.15
-freeze = true
-contact_monitor = true
-max_contacts_reported = 1
-script = ExtResource("13_tnuiq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Pen"]
-scale = Vector2(0.128, 0.128)
-texture = ExtResource("18_sks41")
-
-[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Pen"]
-polygon = PackedVector2Array(-5, -6, -23, -6, -27, -4, -34, -2, -33, 4, 10, 5, 18, 5, 27, 4, 34, 0, 26, -4, 18, -5, 10, -5, 0, -5)
+polygon = PackedVector2Array(-23, -12, -26, -10, -23, 3, -15, 11, -8, 13, -6, 17, 10, 17, 20, 14, 27, 14, 27, 10, 1, 1)
 
 [node name="Plane" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(373, -72)
+position = Vector2(415, -99)
 mass = 5.0
 freeze = true
 contact_monitor = true
@@ -208,12 +193,13 @@ script = ExtResource("13_tnuiq")
 spawnRate = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Plane"]
-position = Vector2(28, 0)
-scale = Vector2(0.128, 0.128)
+position = Vector2(39, 0)
+scale = Vector2(0.174075, 0.174075)
 texture = ExtResource("20_1v6vy")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Plane"]
-polygon = PackedVector2Array(-9, -19, -18, -21, -20, -36, -24, -38, -29, -27, -32, -26, -31, -8, -31, 0, -33, 24, -27, 23, -17, 13, -8, 13, -6, 23, 3, 24, 9, 16, 33, 14, 34, 11, 38, 10, 41, 20, 50, 20, 53, 9, 63, 8, 76, 13, 88, 12, 89, 3, 87, -22, 82, -22, 61, -5, 50, -16, 25, -26, 3, -30)
+scale = Vector2(1.37769, 1.37769)
+polygon = PackedVector2Array(-8.71021, -29.0341, -21.0497, -37.7443, -32, -26, -31, -8, -33, 24, -13.7912, 15.9688, -6, 23, 3, 24, 13.0653, 16.6946, 37.7443, 15.2429, 44.277, 21.0497, 51.5355, 18.1463, 54.4389, 9.43608, 76, 13, 88, 12, 89, 3, 87, -22, 82, -22, 63.1492, -9.43608, 50, -16, 15.2429, -28.3082)
 
 [node name="Player" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(196, -7)
@@ -222,7 +208,7 @@ freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
-spawnRate = 0.8
+spawnRate = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Player"]
 position = Vector2(1.14441e-05, -2.86102e-06)
@@ -231,16 +217,16 @@ texture = ExtResource("20_24oks")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Player"]
 scale = Vector2(1.34495, 1.34495)
-polygon = PackedVector2Array(-9, -28, -19, -22, -20, -8, -22, -2, -22, 26, -15, 27, -13.6701, 22.2139, 16.2332, 21.3595, 19, 27, 23, 27, 24, -2, 15, -12, 1, -19)
+polygon = PackedVector2Array(-9, -28, -14.8704, -26.7668, -19, -22, -22, -2, -22, 26, -15, 27, -11.1528, 23.0492, 15.614, 23.0492, 19, 27, 23, 27, 24, -2, 15, -12)
 
 [node name="Portrait" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(261, -3)
+position = Vector2(267, -3)
 mass = 2.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
-spawnRate = 0.8
+spawnRate = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Portrait"]
 scale = Vector2(0.113157, 0.113157)
@@ -251,36 +237,36 @@ scale = Vector2(1.22186, 1.22186)
 polygon = PackedVector2Array(-19, -29, -19, 25, 23, 26, 23, -29)
 
 [node name="Pot" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(263, -120)
+position = Vector2(263, -81)
 mass = 2.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
-spawnRate = 0.8
+spawnRate = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Pot"]
-scale = Vector2(0.108054, 0.108054)
+scale = Vector2(0.133301, 0.133301)
 texture = ExtResource("22_u600m")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Pot"]
-scale = Vector2(0.810188, 0.810188)
+scale = Vector2(0.990744, 0.990744)
 polygon = PackedVector2Array(-21, -26, -20, -1, -9, 26, 1.23428, 29.6228, 15, 27, 25, -2, 19, -28)
 
 [node name="Slab" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(268, -74)
-mass = 2.0
+position = Vector2(35, -55)
+mass = 1.15
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
-spawnRate = 0.8
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Slab"]
-scale = Vector2(0.128, 0.128)
+scale = Vector2(0.127714, 0.127714)
 texture = ExtResource("23_kkeh5")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Slab"]
+scale = Vector2(1.02484, 1.02484)
 polygon = PackedVector2Array(-28, -6, -29, 11, 28, 10, 29, -6)
 
 [node name="Stone" type="RigidBody2D" parent="Offscreen/Burdens"]
@@ -290,7 +276,7 @@ freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
-spawnRate = 0.8
+spawnRate = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Stone"]
 scale = Vector2(0.128, 0.128)
@@ -334,7 +320,6 @@ position = Vector2(948, -126)
 [connection signal="body_entered" from="Offscreen/Burdens/Candles" to="Offscreen/Burdens/Candles" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Car" to="Offscreen/Burdens/Car" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Feather" to="Offscreen/Burdens/Feather" method="_on_body_entered"]
-[connection signal="body_entered" from="Offscreen/Burdens/Pen" to="Offscreen/Burdens/Pen" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Plane" to="Offscreen/Burdens/Plane" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Player" to="Offscreen/Burdens/Player" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Portrait" to="Offscreen/Burdens/Portrait" method="_on_body_entered"]
