@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=36 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://lu6brkl4i8xl" path="res://assets/sprites/burdens/pot.png" id="22_u600m"]
 [ext_resource type="Texture2D" uid="uid://u0s4gwdsmgyo" path="res://assets/sprites/burdens/book.png" id="23_kkeh5"]
 [ext_resource type="Texture2D" uid="uid://cql4bpan2uif" path="res://assets/sprites/burdens/stone.png" id="24_6gi2q"]
+[ext_resource type="PackedScene" uid="uid://ijaqr2hsgb2n" path="res://scenes/ui.tscn" id="28_4sluj"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nysj8"]
 streams_count = 4
@@ -341,6 +342,14 @@ position = Vector2(1320, 437)
 [node name="ScarabDespawnRight" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(948, -126)
+
+[node name="Ui" parent="." instance=ExtResource("28_4sluj")]
+offset_left = 1221.0
+offset_top = 332.0
+offset_right = 1221.0
+offset_bottom = 332.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [connection signal="pressed" from="Controllers/MuteMusic" to="Controllers/MuteMusic" method="_on_pressed"]
 [connection signal="body_entered" from="Offscreen/Burdens/Ankh" to="Offscreen/Burdens/Ankh" method="_on_body_entered"]

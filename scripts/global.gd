@@ -6,6 +6,7 @@ signal play_impact_sound
 signal hide_sprite
 signal restart
 signal toggle_music
+signal charge_changed
 
 var scales = preload("res://scenes/game_area.tscn")
 var inventory = preload("res://scenes/inventory.tscn")
@@ -44,7 +45,8 @@ func update_scoring(delta: float) -> void:
 						high_score = time_score
 					end_game()
 			GameMode.CHARGE:
-				charge += (0.5 - weight_diff / max_diff) * delta
+				charge += (0.8 - weight_diff / max_diff) * delta * 2
+				charge_changed.emit(charge)
 				# Lose condition
 				if charge < -10:
 					end_game()

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://v068p3mdw6u7"]
+
+[ext_resource type="Script" path="res://scripts/charge_bar.gd" id="1_ay2tw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io32g"]
+bg_color = Color(0.133333, 0.666667, 0.133333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wthp3"]
+bg_color = Color(0.666667, 0.133333, 0.133333, 1)
+
+[node name="ChargeBar" type="VBoxContainer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -200.0
+offset_bottom = 200.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_ay2tw")
+
+[node name="Positive" type="ProgressBar" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_io32g")
+max_value = 60.0
+allow_greater = true
+allow_lesser = true
+fill_mode = 3
+show_percentage = false
+
+[node name="Negative" type="ProgressBar" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_wthp3")
+max_value = 10.0
+allow_greater = true
+allow_lesser = true
+fill_mode = 2
+show_percentage = false

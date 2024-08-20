@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ijaqr2hsgb2n"]
+
+[ext_resource type="PackedScene" uid="uid://v068p3mdw6u7" path="res://scenes/charge_bar.tscn" id="1_5sln1"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChargeBar" parent="." instance=ExtResource("1_5sln1")]
+layout_mode = 1
+anchors_preset = 6
