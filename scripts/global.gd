@@ -49,11 +49,11 @@ func update_scoring(delta: float) -> void:
 				if balance_percent > 0.8:
 					charge += balance_percent * delta * 4
 				elif balance_percent > 0:
-					charge += balance_percent * delta / 2
+					charge += (balance_percent - 0.4) * delta
 				elif balance_percent > -.2:
-					charge += balance_percent * delta * 4
+					charge += (balance_percent - 0.4) * delta * 3
 				else:
-					charge += balance_percent * delta * 8
+					charge += (balance_percent - 0.4) * delta * 4
 					
 				charge_changed.emit(charge)
 				# Lose condition
