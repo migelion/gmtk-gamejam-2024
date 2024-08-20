@@ -76,7 +76,6 @@ offset_left = 16.0
 offset_top = 72.0
 offset_right = 80.0
 offset_bottom = 136.0
-flat = true
 script = ExtResource("7_kpwkm")
 
 [node name="MusicOn" type="Sprite2D" parent="Controllers/MuteMusic"]
