@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=36 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
@@ -22,15 +22,14 @@
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="14_l6b5e"]
 [ext_resource type="Texture2D" uid="uid://dmah2t345m5cd" path="res://assets/sprites/burdens/candles.png" id="15_3qy31"]
 [ext_resource type="Script" path="res://scripts/respawns.gd" id="15_xv5my"]
-[ext_resource type="Texture2D" uid="uid://dd00lakfjn8xa" path="res://assets/sprites/burdens/car.png" id="16_epqeu"]
 [ext_resource type="PackedScene" uid="uid://dlfwq8d4t1fgo" path="res://scenes/scale.tscn" id="16_if4jh"]
 [ext_resource type="Texture2D" uid="uid://cwep1u0gnahao" path="res://assets/sprites/burdens/feather.png" id="17_bcm0f"]
-[ext_resource type="Texture2D" uid="uid://dpfl6d78gprcy" path="res://assets/sprites/burdens/plane.png" id="20_1v6vy"]
 [ext_resource type="Texture2D" uid="uid://dhmwcmfbjful7" path="res://assets/sprites/burdens/player.png" id="20_24oks"]
 [ext_resource type="Texture2D" uid="uid://btxcqtcon13e8" path="res://assets/sprites/burdens/portrait.png" id="21_can5j"]
 [ext_resource type="Texture2D" uid="uid://lu6brkl4i8xl" path="res://assets/sprites/burdens/pot.png" id="22_u600m"]
 [ext_resource type="Texture2D" uid="uid://u0s4gwdsmgyo" path="res://assets/sprites/burdens/book.png" id="23_kkeh5"]
 [ext_resource type="Texture2D" uid="uid://cql4bpan2uif" path="res://assets/sprites/burdens/stone.png" id="24_6gi2q"]
+[ext_resource type="Texture2D" uid="uid://d05hgfjwrwmp3" path="res://assets/sprites/burdens/statue.png" id="27_ueqs4"]
 [ext_resource type="PackedScene" uid="uid://dtsx45vfwne68" path="res://scenes/ui.tscn" id="28_4sluj"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nysj8"]
@@ -141,7 +140,6 @@ position = Vector2(896, -32)
 
 [node name="Offscreen" type="Node2D" parent="."]
 physics_interpolation_mode = 2
-visible = false
 position = Vector2(0, -42)
 
 [node name="Burdens" type="Node2D" parent="Offscreen"]
@@ -161,7 +159,6 @@ scale = Vector2(0.0905866, 0.0905866)
 texture = ExtResource("14_a4t8n")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Ankh"]
-visible = false
 position = Vector2(-1.81633, 3.00701)
 scale = Vector2(0.709065, 0.709065)
 polygon = PackedVector2Array(-8, -37, 0, -38, 6, -35, 10, -28, 17.1142, -10.5318, 16, -1, 12.4337, 9.86227, 3, 34, -4, 37, -10, 34, -20.0033, 9.86227, -23.6966, -1.31648, -23.6966, -11.8483, -13, -32)
@@ -179,28 +176,7 @@ scale = Vector2(0.153005, 0.153005)
 texture = ExtResource("15_3qy31")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Candles"]
-visible = false
-polygon = PackedVector2Array(-5, -26, -7, -17, -10, -15, -14, -11, -15, 0, -19, 3, -18, 25, 13, 26, 14, 13, 13, 6, 9, 2, 6, -13)
-
-[node name="Car" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(418, -6)
-mass = 5.0
-freeze = true
-contact_monitor = true
-max_contacts_reported = 1
-script = ExtResource("13_tnuiq")
-spawnRate = 0.1
-
-[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Car"]
-position = Vector2(37, 0)
-scale = Vector2(0.173149, 0.173149)
-texture = ExtResource("16_epqeu")
-
-[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Car"]
-visible = false
-position = Vector2(-18, 0)
-scale = Vector2(1.45527, 1.45527)
-polygon = PackedVector2Array(-19.2404, -7.55873, -25, 7, -25, 15, -15.8046, 17.1789, -9, 25, 0, 29, 11, 26, 21.989, 17.1789, 48.101, 21.3019, 53, 28, 63, 30, 71, 27, 75, 17, 96.2021, 15.8046, 94.1406, -6.87157, 74.213, -8.93305, 63.9057, -13.056, 26.7992, -17.1789, 21, -26, 16, -29)
+polygon = PackedVector2Array(-5, -26, -7, -17, -14, -11, -15, 0, -19, 3, -18, 25, 13, 26, 14, 13, 13, 6, 9, 2, 6, -13)
 
 [node name="Feather" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(99, -55)
@@ -216,27 +192,7 @@ scale = Vector2(0.128, 0.128)
 texture = ExtResource("17_bcm0f")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Feather"]
-visible = false
-polygon = PackedVector2Array(-23, -12, -26, -10, -23, 3, -15, 11, -8, 13, -6, 17, 10, 17, 20, 14, 27, 14, 27, 10, 1, 1)
-
-[node name="Plane" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(415, -99)
-mass = 5.0
-freeze = true
-contact_monitor = true
-max_contacts_reported = 1
-script = ExtResource("13_tnuiq")
-spawnRate = 0.1
-
-[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Plane"]
-position = Vector2(39, 0)
-scale = Vector2(0.174075, 0.174075)
-texture = ExtResource("20_1v6vy")
-
-[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Plane"]
-visible = false
-scale = Vector2(1.37769, 1.37769)
-polygon = PackedVector2Array(-8.71021, -29.0341, -21.0497, -37.7443, -32, -26, -31, -8, -31.9375, 23.9531, -15.2429, 18.8722, -6, 23, 3, 24, 13.0653, 16.6946, 35.5668, 15.2429, 44.277, 21.0497, 51.5355, 18.1463, 60.2458, 11.6136, 76, 13, 88, 12, 89, 3, 87, -22, 82, -22, 63.1492, -9.43608, 50, -16, 10.8878, -29.76)
+polygon = PackedVector2Array(-23, -12, -26, -10, -23, 3, -15, 11, -6, 17, 10, 17, 27, 14, 27, 10, 1, 1)
 
 [node name="Player" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(196, -7)
@@ -253,7 +209,6 @@ scale = Vector2(0.118551, 0.118551)
 texture = ExtResource("20_24oks")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Player"]
-visible = false
 scale = Vector2(1.34495, 1.34495)
 polygon = PackedVector2Array(-9, -28, -14.8704, -26.7668, -19, -22, -22, -2, -22, 26, -15, 27, -11.1528, 23.0492, 15.614, 23.0492, 19, 27, 23, 27, 24, -2, 15, -12)
 
@@ -271,9 +226,25 @@ scale = Vector2(0.113157, 0.113157)
 texture = ExtResource("21_can5j")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Portrait"]
-visible = false
 scale = Vector2(1.22186, 1.22186)
 polygon = PackedVector2Array(-19, -29, -19, 25, 23, 26, 23, -29)
+
+[node name="Statue" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(440, -73)
+mass = 5.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("13_tnuiq")
+spawnRate = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Statue"]
+scale = Vector2(0.133552, 0.133552)
+texture = ExtResource("27_ueqs4")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Statue"]
+scale = Vector2(1.22186, 1.22186)
+polygon = PackedVector2Array(9.00269, -44.1949, -11.4579, 5.72897, -42.558, 11.4579, -68.7476, 39.2844, -70.3845, 58.9266, 70.3845, 58.1081, 70.3845, 47.4686, 45.0134, 30.2817, 48.287, 13.0948, 58.9266, 5.72897, 59.745, -7.36582, 41.7397, -22.9159, 29.4633, -44.1949)
 
 [node name="Pot" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(263, -81)
@@ -289,9 +260,8 @@ scale = Vector2(0.133301, 0.133301)
 texture = ExtResource("22_u600m")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Pot"]
-visible = false
 scale = Vector2(0.990744, 0.990744)
-polygon = PackedVector2Array(-21, -26, -20, -1, -9, 26, 1.23428, 29.6228, 15, 27, 25, -2, 19, -28)
+polygon = PackedVector2Array(-21, -26, -20, -1, -10.0934, 27.2522, 1.23428, 29.6228, 15.1401, 28.2616, 25, -2, 19, -28)
 
 [node name="Book" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(35, -55)
@@ -306,9 +276,8 @@ scale = Vector2(0.127714, 0.127714)
 texture = ExtResource("23_kkeh5")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Book"]
-visible = false
 scale = Vector2(1.02484, 1.02484)
-polygon = PackedVector2Array(-28, -6, -29, 11, 28, 10, 29, -6)
+polygon = PackedVector2Array(-28, -6, -29, 11, 28, 10, 29.2729, -7.8061)
 
 [node name="Stone" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(196, -78)
@@ -324,8 +293,7 @@ scale = Vector2(0.128, 0.128)
 texture = ExtResource("24_6gi2q")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Stone"]
-visible = false
-polygon = PackedVector2Array(-7, -20, -22, -16, -29, -2, -28, 13, -22, 19, 2, 20, 28, 16, 32, 6, 32, -5, 29, -13, 23, -19)
+polygon = PackedVector2Array(-7, -20, -26, -16, -29, -2, -29, 16, -22, 19, 2, 20, 28, 16, 32, 6, 32, -5, 29, -13, 23, -19)
 
 [node name="Scripts" type="Node" parent="Offscreen"]
 
@@ -376,11 +344,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_uw8w5")
 [connection signal="pressed" from="Controllers/MuteMusic" to="Controllers/MuteMusic" method="_on_pressed"]
 [connection signal="body_entered" from="Offscreen/Burdens/Ankh" to="Offscreen/Burdens/Ankh" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Candles" to="Offscreen/Burdens/Candles" method="_on_body_entered"]
-[connection signal="body_entered" from="Offscreen/Burdens/Car" to="Offscreen/Burdens/Car" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Feather" to="Offscreen/Burdens/Feather" method="_on_body_entered"]
-[connection signal="body_entered" from="Offscreen/Burdens/Plane" to="Offscreen/Burdens/Plane" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Player" to="Offscreen/Burdens/Player" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Portrait" to="Offscreen/Burdens/Portrait" method="_on_body_entered"]
+[connection signal="body_entered" from="Offscreen/Burdens/Statue" to="Offscreen/Burdens/Statue" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Pot" to="Offscreen/Burdens/Pot" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Book" to="Offscreen/Burdens/Book" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Stone" to="Offscreen/Burdens/Stone" method="_on_body_entered"]
