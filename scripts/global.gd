@@ -62,7 +62,7 @@ func update_scoring(delta: float) -> void:
 					end_game()
 			GameMode.CHARGE:
 				balance_percent = 1 - weight_diff / max_diff
-				if balance_percent > 0.90:
+				if balance_percent > 0.87:
 					charge += balance_percent * delta * 3
 				elif balance_percent > 0:
 					charge += (balance_percent - 1) * delta
