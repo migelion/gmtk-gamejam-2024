@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/gameover_time.gd" id="3_jntt7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44bql"]
-bg_color = Color(0.298039, 0.203922, 0.207843, 0.835294)
+bg_color = Color(0.348763, 0.339767, 0.310843, 0.835294)
 
 [node name="GameOver" type="Node2D"]
 
@@ -30,22 +30,24 @@ text = "Restart"
 script = ExtResource("1_dm1lr")
 
 [node name="GameOver" type="Label" parent="."]
-offset_left = 440.0
+offset_left = 213.0
 offset_top = 224.0
-offset_right = 845.0
+offset_right = 1072.0
 offset_bottom = 321.0
 theme_override_fonts/font = ExtResource("2_grgpx")
 theme_override_font_sizes/font_size = 71
-text = "Game Over!"
+text = "You succeeded!"
+horizontal_alignment = 1
 
 [node name="Time" type="Label" parent="."]
-offset_left = 552.0
+offset_left = 347.0
 offset_top = 344.0
-offset_right = 695.0
+offset_right = 936.0
 offset_bottom = 388.0
 theme_override_fonts/font = ExtResource("2_grgpx")
 theme_override_font_sizes/font_size = 31
-text = "Score: 0.0"
+text = "Finished in: 0.00 seconds"
+horizontal_alignment = 1
 script = ExtResource("3_jntt7")
 
 [connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_pressed"]

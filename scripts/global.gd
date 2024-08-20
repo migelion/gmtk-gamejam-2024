@@ -29,6 +29,7 @@ var time_score: float = 0
 var charge: float = 0
 var high_score: float = 0
 var fastest_charge: float = 0
+var endgame_text: String = ""
 
 func end_game() -> void:
 	var instance = game_over.instantiate()
@@ -51,17 +52,19 @@ func update_scoring(delta: float) -> void:
 				elif balance_percent > 0:
 					charge += (balance_percent - 0.65) * delta
 				elif balance_percent > -.2:
-					charge += (balance_percent - 0.5) * delta * 3
+					charge += (balance_percent - 0.8) * delta * 3
 				else:
-					charge += (balance_percent - 0.5) * delta * 4
+					charge += (balance_percent - 0.9) * delta * 4
 					
 				charge_changed.emit(charge)
 				# Lose condition
 				if charge < -2:
+					endgame_text = "You failed!"
 					end_game()
 				if charge > 60:
 					if fastest_charge == 0 or time_score < fastest_charge:
 						fastest_charge = time_score
+					endgame_text = "You succeeded!"
 					end_game()
 
 func restart_game() -> void:
