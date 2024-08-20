@@ -16,7 +16,7 @@ func _timeout() -> void:
 			wait_time = 0.9
 		if items_spawned >= 35:
 			wait_time = 0.7
-		if Global.game_mode == Global.GameMode.CHARGE:
+		if Global.game_mode == Global.GameMode.SURVIVAL:
 			if items_spawned >= 80:
 				wait_time = 0.5
 			if items_spawned >= 130:
