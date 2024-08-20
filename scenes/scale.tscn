@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlfwq8d4t1fgo"]
+[gd_scene load_steps=8 format=3 uid="uid://dlfwq8d4t1fgo"]
 
 [ext_resource type="FontFile" uid="uid://50tn5pcvxbmi" path="res://assets/fonts/Merriweather-Regular.ttf" id="2_bw15n"]
 [ext_resource type="Texture2D" uid="uid://bx28brehyw42p" path="res://assets/sprites/arm.png" id="4_ulyd0"]
@@ -7,9 +7,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8hrv"]
 size = Vector2(320, 20)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dc1yj"]
-load_path = "res://.godot/imported/Arm.svg-e7211aeec4f28f18fca916d883096a1e.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfvfr"]
 size = Vector2(392, 20)
@@ -79,13 +76,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Arm/Arm"]
-visible = false
-position = Vector2(0, -44.5)
-scale = Vector2(1.51311, 1.11818)
-texture = SubResource("CompressedTexture2D_dc1yj")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Arm/Arm"]
-position = Vector2(0, -35)
+position = Vector2(3, -37)
 scale = Vector2(0.525477, 0.494924)
 texture = ExtResource("4_ulyd0")
 
