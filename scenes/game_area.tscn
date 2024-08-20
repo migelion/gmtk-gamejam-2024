@@ -266,7 +266,7 @@ texture = ExtResource("22_u600m")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Pot"]
 scale = Vector2(0.990744, 0.990744)
-polygon = PackedVector2Array(-21, -26, -21.1962, -1.00935, -10.0934, 28.2616, 1.00934, 30.2803, 15.1401, 28.2616, 25, -2, 19, -28)
+polygon = PackedVector2Array(-21, -26, -21.1962, -1.00935, -10.0934, 28.2616, 1.00934, 30.2803, 15.1401, 28.2616, 25, -2, 19, -28, -2.01868, -31.2896)
 
 [node name="Book" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(35, -55)
