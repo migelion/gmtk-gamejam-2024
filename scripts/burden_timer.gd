@@ -17,8 +17,8 @@ var SURVIVAL_WAIT_TIME_KEYS = SURVIVAL_WAIT_TIMES.keys()
 
 @export var CHARGE_WAIT_TIMES = {
 	0: 0.4,
-	4: 1.3,
-	10: 1.1,
+	4: 1.2,
+	10: 1,
 	18: 0.9,
 	35: 0.7,
 	}

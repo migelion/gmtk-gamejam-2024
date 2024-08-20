@@ -90,9 +90,9 @@ stream = ExtResource("5_twir8")
 
 [node name="MuteMusic" type="Button" parent="Controllers"]
 offset_left = 16.0
-offset_top = 72.0
+offset_top = 99.0
 offset_right = 80.0
-offset_bottom = 136.0
+offset_bottom = 163.0
 script = ExtResource("7_kpwkm")
 
 [node name="MusicOn" type="Sprite2D" parent="Controllers/MuteMusic"]
