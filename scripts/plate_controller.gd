@@ -12,5 +12,14 @@ func _process(delta: float) -> void:
 	
 	Global.weight_diff = abs(left_y - right_y)
 	Global.update_scoring(delta)
-	var percent = 100 - (Global.weight_diff / Global.max_diff * 100)
+	var percent = Global.balance_percent * 100
 	$BalanceLabel.text = "%4.0f" % percent
+
+	var color := Color.WHITE
+	if percent > 90:
+		color = Color.GREEN
+	elif percent < 0:
+		color = Color.RED
+		
+	$Label.set("theme_override_colors/font_color", color)
+	$BalanceLabel.set("theme_override_colors/font_color", color)

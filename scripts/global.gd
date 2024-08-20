@@ -30,9 +30,10 @@ var charge: float = 0
 var high_score: float = 0
 var fastest_charge: float = 0
 var endgame_text: String = ""
+var balance_percent: float = 0
 
 func end_game() -> void:
-	var instance = game_over.instantiate()
+	var instance := game_over.instantiate()
 	add_child(instance)
 	game_started = false
 
@@ -46,7 +47,7 @@ func update_scoring(delta: float) -> void:
 						high_score = time_score
 					end_game()
 			GameMode.CHARGE:
-				var balance_percent = 1 - weight_diff / max_diff
+				balance_percent = 1 - weight_diff / max_diff
 				if balance_percent > 0.90:
 					charge += balance_percent * delta * 4
 				elif balance_percent > 0:
@@ -79,12 +80,12 @@ func set_mouse_input(cond: bool) -> void:
 	mouse_input = cond
 
 func show_scales() -> void:
-	var instance = scales.instantiate()
+	var instance := scales.instantiate()
 	add_child(instance)
 	scales_visible = true
 
 func show_inventory() -> void:
-	var instance = inventory.instantiate()
+	var instance := inventory.instantiate()
 	add_child(instance)
 	inv_visible = true
 
