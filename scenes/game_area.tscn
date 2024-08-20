@@ -144,7 +144,6 @@ position = Vector2(0, -42)
 
 [node name="Burdens" type="Node2D" parent="Offscreen"]
 unique_name_in_owner = true
-visible = false
 
 [node name="Ankh" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(40, 0)
@@ -155,8 +154,8 @@ max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Ankh"]
-position = Vector2(-1.96724, 2.51482)
-scale = Vector2(0.0905866, 0.0905866)
+position = Vector2(-6, -1)
+scale = Vector2(0.0876034, 0.0876034)
 texture = ExtResource("14_a4t8n")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Ankh"]
@@ -173,11 +172,12 @@ max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Candles"]
+position = Vector2(-2, 3)
 scale = Vector2(0.153005, 0.153005)
 texture = ExtResource("15_3qy31")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Candles"]
-polygon = PackedVector2Array(-5, -26, -7, -17, -14, -11, -15, 0, -19, 3, -18, 25, 13, 26, 14, 13, 13, 6, 9, 2, 6, -13)
+polygon = PackedVector2Array(-5, -26, -7, -17, -14, -11, -15, 0, -19, 3, -19, 26, 13, 26, 14, 13, 13, 6, 9, 2, 7, -13)
 
 [node name="Feather" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(99, -55)
@@ -189,11 +189,12 @@ script = ExtResource("13_tnuiq")
 spawnRate = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Feather"]
+position = Vector2(-1, -1)
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("17_bcm0f")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Feather"]
-polygon = PackedVector2Array(-23, -12, -26, -10, -23, 3, -15, 11, -6, 17, 10, 17, 27, 14, 27, 10, 1, 1)
+polygon = PackedVector2Array(-23, -12, -27, -11, -24, 3, -16, 11, -6, 17, 10, 17, 28, 14, 27, 10, 1, 1)
 
 [node name="Player" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(196, -7)
@@ -205,13 +206,13 @@ script = ExtResource("13_tnuiq")
 spawnRate = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Player"]
-position = Vector2(1.14441e-05, -2.86102e-06)
+position = Vector2(2, 2)
 scale = Vector2(0.118551, 0.118551)
 texture = ExtResource("20_24oks")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Player"]
 scale = Vector2(1.34495, 1.34495)
-polygon = PackedVector2Array(-9, -28, -14.8704, -26.7668, -19, -22, -22, -2, -22, 26, -15, 27, -11.1528, 23.0492, 15.614, 23.0492, 19, 27, 23, 27, 24, -2, 15, -12)
+polygon = PackedVector2Array(-9, -28, -14.8704, -26.7668, -20.0751, -20.0751, -23.0492, -1.48705, -22.3057, 27.5103, -16.3575, 27.5103, -11.1528, 23.0492, 15.614, 23.0492, 19, 27, 23.7927, 26.7668, 24, -2, 15, -12)
 
 [node name="Portrait" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(267, -3)
@@ -223,12 +224,13 @@ script = ExtResource("13_tnuiq")
 spawnRate = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Portrait"]
+position = Vector2(-1, 2)
 scale = Vector2(0.113157, 0.113157)
 texture = ExtResource("21_can5j")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Portrait"]
 scale = Vector2(1.22186, 1.22186)
-polygon = PackedVector2Array(-19, -29, -19, 25, 23, 26, 23, -29)
+polygon = PackedVector2Array(-19.6422, -29.4633, -19.6422, 25.3712, 23, 26, 23, -29)
 
 [node name="Statue" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(440, -73)
@@ -240,12 +242,13 @@ script = ExtResource("13_tnuiq")
 spawnRate = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Statue"]
+position = Vector2(1, -1)
 scale = Vector2(0.133552, 0.133552)
 texture = ExtResource("27_ueqs4")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Statue"]
 scale = Vector2(1.22186, 1.22186)
-polygon = PackedVector2Array(9.00269, -44.1949, -11.4579, 5.72897, -42.558, 11.4579, -68.7476, 39.2844, -70.3845, 58.9266, 70.3845, 58.1081, 70.3845, 47.4686, 45.0134, 30.2817, 48.287, 13.0948, 58.9266, 5.72897, 59.745, -7.36582, 41.7397, -22.9159, 29.4633, -44.1949)
+polygon = PackedVector2Array(15.55, -45.0133, -11.4579, 5.72897, -39.2844, 14.7316, -58.1081, 33.5554, -69.5661, 47.4686, -70.3845, 58.9266, 68.7477, 57.2897, 67.9292, 47.4686, 47.4686, 28.6449, 48.287, 11.4579, 54.8344, 3.2737, 58.9265, -4.09212, 36.8291, -22.0975, 21.279, -43.3765)
 
 [node name="Pot" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(263, -81)
@@ -257,12 +260,13 @@ script = ExtResource("13_tnuiq")
 spawnRate = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Pot"]
+position = Vector2(-2, -1)
 scale = Vector2(0.133301, 0.133301)
 texture = ExtResource("22_u600m")
 
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Pot"]
 scale = Vector2(0.990744, 0.990744)
-polygon = PackedVector2Array(-21, -26, -20, -1, -10.0934, 27.2522, 1.23428, 29.6228, 15.1401, 28.2616, 25, -2, 19, -28)
+polygon = PackedVector2Array(-21, -26, -21.1962, -1.00935, -10.0934, 28.2616, 1.00934, 30.2803, 15.1401, 28.2616, 25, -2, 19, -28)
 
 [node name="Book" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(35, -55)
@@ -290,6 +294,7 @@ script = ExtResource("13_tnuiq")
 spawnRate = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Stone"]
+position = Vector2(-2, -1)
 scale = Vector2(0.128, 0.128)
 texture = ExtResource("24_6gi2q")
 
