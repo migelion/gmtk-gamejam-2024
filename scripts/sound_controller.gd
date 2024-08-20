@@ -8,3 +8,6 @@ func play_impact_sound() -> void:
 
 func _on_mouse_controllable_pickup() -> void:
 	%PickupSound.play()
+
+func _on_mouse_controllable_drop() -> void:
+	%DropSound.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=35 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
@@ -12,7 +12,11 @@
 [ext_resource type="AudioStream" uid="uid://bfj65upflajvq" path="res://assets/sfx/scale hits/hit_heavy_1.wav" id="7_syo52"]
 [ext_resource type="Texture2D" uid="uid://cxxyqsxr60fac" path="res://assets/ui/music-off.svg" id="8_02akh"]
 [ext_resource type="AudioStream" uid="uid://d3ecs6kmqmbbm" path="res://assets/sfx/scale hits/hit_heavy_2.wav" id="8_bbma6"]
+[ext_resource type="AudioStream" uid="uid://b5j2qrjm5hx15" path="res://assets/sfx/other sounds/dvd_case_1_(item_release).wav" id="9_s83sh"]
 [ext_resource type="Script" path="res://scripts/burden_timer.gd" id="9_tgafl"]
+[ext_resource type="AudioStream" uid="uid://b7o1p7tmvipru" path="res://assets/sfx/other sounds/dvd_case_2_(item_release).wav" id="10_tq676"]
+[ext_resource type="AudioStream" uid="uid://cxtwloa5fvhf3" path="res://assets/sfx/other sounds/dvd_case_3_(item_release).wav" id="11_qusfa"]
+[ext_resource type="AudioStream" uid="uid://ccegr21bla41h" path="res://assets/sfx/other sounds/dvd_case_4_(item_release).wav" id="12_rpsip"]
 [ext_resource type="Script" path="res://scripts/burden.gd" id="13_tnuiq"]
 [ext_resource type="Texture2D" uid="uid://c53jdhrnui2yf" path="res://assets/sprites/burdens/ankh.png" id="14_a4t8n"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="14_l6b5e"]
@@ -34,6 +38,13 @@ stream_0/stream = ExtResource("3_txwsj")
 stream_1/stream = ExtResource("4_5dpx3")
 stream_2/stream = ExtResource("7_syo52")
 stream_3/stream = ExtResource("8_bbma6")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_d5n0x"]
+streams_count = 4
+stream_0/stream = ExtResource("9_s83sh")
+stream_1/stream = ExtResource("10_tq676")
+stream_2/stream = ExtResource("11_qusfa")
+stream_3/stream = ExtResource("12_rpsip")
 
 [sub_resource type="GDScript" id="GDScript_8vbm7"]
 
@@ -66,6 +77,11 @@ script = ExtResource("3_wvbqk")
 [node name="ImpactSound" type="AudioStreamPlayer" parent="Controllers/SoundController"]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_nysj8")
+
+[node name="DropSound" type="AudioStreamPlayer" parent="Controllers/SoundController"]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_d5n0x")
+volume_db = -20.0
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="Controllers/SoundController"]
 unique_name_in_owner = true
@@ -337,4 +353,5 @@ position = Vector2(948, -126)
 [connection signal="body_entered" from="Offscreen/Burdens/Pot" to="Offscreen/Burdens/Pot" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Book" to="Offscreen/Burdens/Book" method="_on_body_entered"]
 [connection signal="body_entered" from="Offscreen/Burdens/Stone" to="Offscreen/Burdens/Stone" method="_on_body_entered"]
+[connection signal="drop" from="Offscreen/Scripts/MouseControllable" to="Controllers/SoundController" method="_on_mouse_controllable_drop"]
 [connection signal="pickup" from="Offscreen/Scripts/MouseControllable" to="Controllers/SoundController" method="_on_mouse_controllable_pickup"]

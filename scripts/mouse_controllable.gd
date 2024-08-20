@@ -1,6 +1,7 @@
 extends Node
 
 signal pickup
+signal drop
 
 var grabbed = false
 var parent: PhysicsBody2D
@@ -33,6 +34,7 @@ func _input(event: InputEvent):
 	if grabbed:
 		if event is InputEventMouseButton:
 			if event.is_released():
+				drop.emit()
 				if parentRigid:
 					parentRigid.freeze = false
 					parentRigid.set_collision_layer_value(0b0001, true)

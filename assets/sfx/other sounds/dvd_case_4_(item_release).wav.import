@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccegr21bla41h"
+path="res://.godot/imported/dvd_case_4_(item_release).wav-3a422176ad99993cbd53a15fc353cfcd.sample"
+
+[deps]
+
+source_file="res://assets/sfx/other sounds/dvd_case_4_(item_release).wav"
+dest_files=["res://.godot/imported/dvd_case_4_(item_release).wav-3a422176ad99993cbd53a15fc353cfcd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
