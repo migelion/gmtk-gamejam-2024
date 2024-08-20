@@ -6,7 +6,11 @@ func _ready() -> void:
 	wait_time = 0.5
 	timeout.connect(_timeout)
 
-func _timeout() -> void:	
+const SURVIVAL_WAIT_TIMES = []
+func calculate_wait_time() -> float:
+	return 0.5
+
+func _timeout() -> void:
 	if Global.game_started:
 		if items_spawned >= 3:
 			wait_time = 1.5
