@@ -18,9 +18,9 @@ You: What is this?
 Anubis: These are the Scales of Justice. To measure these wretched souls.
 You: Like with the Feather or something?
 Anubis: Wise you are. Yes and No.
-	Ma’at is on vacation. You will take his place.
+Anubis: Ma’at is on vacation. You will take his place.
 You: Huh?
-Anubis: I will take my leave now.
+Anubis: I will take my leave now. Do not make a mess.
 You: Wait, what?
 Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND FEAST AND RECIEVE PETS. Do not perturb my vacation.
 do Global.hide_sprite.emit()
