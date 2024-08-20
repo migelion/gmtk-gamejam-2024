@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlfwq8d4t1fgo"]
+[gd_scene load_steps=9 format=3 uid="uid://dlfwq8d4t1fgo"]
 
-[ext_resource type="Texture2D" uid="uid://bcpqw1rbfe5wu" path="res://assets/sprites/Arm.svg" id="1_f3ynw"]
-[ext_resource type="Texture2D" uid="uid://dva3xxkavubfe" path="res://assets/sprites/Plate2.png" id="2_b8g2o"]
 [ext_resource type="FontFile" uid="uid://50tn5pcvxbmi" path="res://assets/fonts/Merriweather-Regular.ttf" id="2_bw15n"]
+[ext_resource type="Texture2D" uid="uid://bx28brehyw42p" path="res://assets/sprites/arm.png" id="4_ulyd0"]
+[ext_resource type="Texture2D" uid="uid://blmkepxi83tuj" path="res://assets/sprites/plate.png" id="4_x6qjf"]
 [ext_resource type="Script" path="res://scripts/plate_controller.gd" id="7_g0sej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8hrv"]
 size = Vector2(320, 20)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dc1yj"]
+load_path = "res://.godot/imported/Arm.svg-e7211aeec4f28f18fca916d883096a1e.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfvfr"]
 size = Vector2(392, 20)
@@ -76,11 +79,18 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Arm/Arm"]
+visible = false
 position = Vector2(0, -44.5)
 scale = Vector2(1.51311, 1.11818)
-texture = ExtResource("1_f3ynw")
+texture = SubResource("CompressedTexture2D_dc1yj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arm/Arm"]
+position = Vector2(0, -35)
+scale = Vector2(0.525477, 0.494924)
+texture = ExtResource("4_ulyd0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arm/Arm"]
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_pfvfr")
 
 [node name="Left" type="Node2D" parent="."]
@@ -97,9 +107,9 @@ mass = 4.0
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Left/LeftPlate"]
-position = Vector2(0, -83.1875)
-scale = Vector2(2.54, 1.63466)
-texture = ExtResource("2_b8g2o")
+position = Vector2(3, -77)
+scale = Vector2(0.524823, 0.528336)
+texture = ExtResource("4_x6qjf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Left/LeftPlate"]
 position = Vector2(-1, 82)
@@ -137,9 +147,9 @@ mass = 4.0
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Right/RightPlate"]
-position = Vector2(0, -83.1875)
-scale = Vector2(2.54, 1.63466)
-texture = ExtResource("2_b8g2o")
+position = Vector2(3, -76.8993)
+scale = Vector2(0.524823, 0.528336)
+texture = ExtResource("4_x6qjf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Right/RightPlate"]
 position = Vector2(-1.00003, 81)

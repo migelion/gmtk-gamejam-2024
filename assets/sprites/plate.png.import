@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcpqw1rbfe5wu"
-path="res://.godot/imported/Arm.svg-e7211aeec4f28f18fca916d883096a1e.ctex"
+uid="uid://blmkepxi83tuj"
+path="res://.godot/imported/plate.png-b65d248eb5571b72f81546eb64822c97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Arm.svg"
-dest_files=["res://.godot/imported/Arm.svg-e7211aeec4f28f18fca916d883096a1e.ctex"]
+source_file="res://assets/sprites/plate.png"
+dest_files=["res://.godot/imported/plate.png-b65d248eb5571b72f81546eb64822c97.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
