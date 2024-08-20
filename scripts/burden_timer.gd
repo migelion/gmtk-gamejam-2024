@@ -19,8 +19,7 @@ var SURVIVAL_WAIT_TIME_KEYS = SURVIVAL_WAIT_TIMES.keys()
 	0: 0.4,
 	4: 1.2,
 	10: 1,
-	18: 0.9,
-	35: 0.7,
+	25: 0.9,
 	}
 var CHARGE_WAIT_TIME_KEYS = CHARGE_WAIT_TIMES.keys()
 
