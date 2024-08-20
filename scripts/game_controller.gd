@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 				%Time.text = "Time: %8.2f\nHigh Score: %8.2f" % [Global.time_score, Global.high_score]
 			Global.GameMode.CHARGE:
 				if Global.fastest_charge != 0:
-					%Time.text = ("Time: %8.2f\nFastest Fill Time: %8.2f"
+					%Time.text = ("Time: %8.2f\nFastest Win Time: %8.2f"
 					   % [Global.time_score, Global.fastest_charge])
 				else:
 					%Time.text = ("Time: %8.2f" % [Global.time_score])

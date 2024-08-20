@@ -78,6 +78,7 @@ script = ExtResource("3_wvbqk")
 [node name="ImpactSound" type="AudioStreamPlayer" parent="Controllers/SoundController"]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_nysj8")
+volume_db = -8.0
 
 [node name="DropSound" type="AudioStreamPlayer" parent="Controllers/SoundController"]
 unique_name_in_owner = true
