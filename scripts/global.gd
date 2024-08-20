@@ -48,7 +48,7 @@ func update_scoring(delta: float) -> void:
 				charge += (0.8 - weight_diff / max_diff) * delta * 2
 				charge_changed.emit(charge)
 				# Lose condition
-				if charge < -10:
+				if charge < -2:
 					end_game()
 				if charge > 60:
 					if fastest_charge == 0 or time_score < fastest_charge:
