@@ -13,6 +13,8 @@ func _ready() -> void:
 	
 	if not Global.first_time:
 		skip()
+		$IntroMusicPlayer.autoplay = false
+		$IntroMusicPlayer.stop()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_released(&"diag_continue") and Global.mouse_input and enabled:
