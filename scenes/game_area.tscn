@@ -141,6 +141,7 @@ position = Vector2(896, -32)
 
 [node name="Offscreen" type="Node2D" parent="."]
 physics_interpolation_mode = 2
+visible = false
 position = Vector2(0, -42)
 
 [node name="Burdens" type="Node2D" parent="Offscreen"]
