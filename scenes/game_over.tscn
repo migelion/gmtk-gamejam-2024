@@ -21,9 +21,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_44bql")
 
 [node name="RestartButton" type="Button" parent="."]
 offset_left = 531.0
-offset_top = 498.0
+offset_top = 538.0
 offset_right = 749.0
-offset_bottom = 562.0
+offset_bottom = 602.0
 theme_override_fonts/font = ExtResource("2_grgpx")
 theme_override_font_sizes/font_size = 31
 text = "Play Again"
@@ -40,14 +40,15 @@ text = "You succeeded!"
 horizontal_alignment = 1
 
 [node name="Time" type="Label" parent="."]
-offset_left = 347.0
-offset_top = 219.0
-offset_right = 936.0
-offset_bottom = 263.0
+offset_left = 339.0
+offset_top = 222.0
+offset_right = 944.0
+offset_bottom = 272.0
 theme_override_fonts/font = ExtResource("2_grgpx")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 28
 text = "Finished in: 0.00 seconds"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 script = ExtResource("3_jntt7")
 
