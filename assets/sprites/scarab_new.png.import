@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxnrmkcm5nlwm"
-path="res://.godot/imported/scarab.png-5501e34668fa7700eb4ccf2b30b9818e.ctex"
+uid="uid://cq7tmhup0dtml"
+path="res://.godot/imported/scarab_new.png-b3ada32b37e1cb57268599b345624ce8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/scarab.png"
-dest_files=["res://.godot/imported/scarab.png-5501e34668fa7700eb4ccf2b30b9818e.ctex"]
+source_file="res://assets/sprites/scarab_new.png"
+dest_files=["res://.godot/imported/scarab_new.png-b3ada32b37e1cb57268599b345624ce8.ctex"]
 
 [params]
 
