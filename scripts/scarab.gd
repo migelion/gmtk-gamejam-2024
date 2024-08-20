@@ -17,7 +17,7 @@ func carry(object: Node2D):
 	if object.get_parent() and object.get_parent() != self:
 		object.get_parent().remove_child(object)
 	object.position = Vector2(0,0)
-	object.rotation = 0
+	object.rotation = randi() % 180
 	var rigid = object as RigidBody2D
 	if rigid:
 		rigid.freeze = true
