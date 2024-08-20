@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://lu6brkl4i8xl" path="res://assets/sprites/burdens/pot.png" id="22_u600m"]
 [ext_resource type="Texture2D" uid="uid://u0s4gwdsmgyo" path="res://assets/sprites/burdens/book.png" id="23_kkeh5"]
 [ext_resource type="Texture2D" uid="uid://cql4bpan2uif" path="res://assets/sprites/burdens/stone.png" id="24_6gi2q"]
-[ext_resource type="PackedScene" uid="uid://ijaqr2hsgb2n" path="res://scenes/ui.tscn" id="28_4sluj"]
+[ext_resource type="PackedScene" uid="uid://dtsx45vfwne68" path="res://scenes/ui.tscn" id="28_4sluj"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nysj8"]
 streams_count = 4

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ijaqr2hsgb2n"]
+[gd_scene load_steps=2 format=3 uid="uid://dtsx45vfwne68"]
 
-[ext_resource type="PackedScene" uid="uid://v068p3mdw6u7" path="res://scenes/charge_bar.tscn" id="1_5sln1"]
+[ext_resource type="PackedScene" uid="uid://c8yyu8gggsylf" path="res://scenes/charge_bar.tscn" id="1_5sln1"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -12,4 +12,3 @@ grow_vertical = 2
 
 [node name="ChargeBar" parent="." instance=ExtResource("1_5sln1")]
 layout_mode = 1
-anchors_preset = 6

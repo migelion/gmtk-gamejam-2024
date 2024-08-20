@@ -16,14 +16,15 @@ func _timeout() -> void:
 			wait_time = 0.9
 		if items_spawned >= 35:
 			wait_time = 0.7
-		if items_spawned >= 80:
-			wait_time = 0.5
-		if items_spawned >= 130:
-			wait_time = 0.4
-		if items_spawned >= 180:
-			wait_time = 0.3
-		if items_spawned >= 210:
-			wait_time = 0.2
+		if Global.game_mode == Global.GameMode.CHARGE:
+			if items_spawned >= 80:
+				wait_time = 0.5
+			if items_spawned >= 130:
+				wait_time = 0.4
+			if items_spawned >= 180:
+				wait_time = 0.3
+			if items_spawned >= 210:
+				wait_time = 0.2
 		print("objects: %s" % items_spawned)
 		print("wait time: %s" % wait_time)
 		$"../Controllers/ObjectController".launch_random_scarab()
