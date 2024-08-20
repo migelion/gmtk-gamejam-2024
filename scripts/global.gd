@@ -12,7 +12,7 @@ var inventory = preload("res://scenes/inventory.tscn")
 var game_over = preload("res://scenes/game_over.tscn")
 
 enum GameMode { SURVIVAL, CHARGE}
-var game_mode = GameMode.SURVIVAL
+var game_mode = GameMode.CHARGE
 
 var blackscreen: bool = true
 var mouse_input: bool = true
@@ -55,6 +55,7 @@ func update_scoring(delta: float) -> void:
 
 func restart_game() -> void:
 	weight_diff = 0
+	charge = 0
 	game_started = true
 	get_tree().change_scene_to_file("res://scenes/dialog.tscn")
 	show_scales()
