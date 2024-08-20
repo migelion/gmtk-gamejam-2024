@@ -25,7 +25,8 @@ Anubis: I will take my leave now.
 You: Wait, what?
 Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND FEAST AND RECIEVE PETS. Do not perturb my vacation.
 do Global.hide_sprite.emit()
-You: I don’t even have proper training for this...
+You: I don’t even have proper training for this..
+You: Wait.. are those scarabs?
 do Global.play_sound("leaving")
 
 => END

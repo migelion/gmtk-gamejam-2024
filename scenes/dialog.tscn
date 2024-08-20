@@ -33,7 +33,7 @@ volume_db = -10.209
 script = ExtResource("3_dwna6")
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.807843, 0.72549, 0.694118, 0.811765)
+modulate = Color(0.905882, 0.862745, 0.847059, 0.647059)
 z_index = -28
 position = Vector2(638.021, 318.266)
 scale = Vector2(0.447902, 0.447902)
