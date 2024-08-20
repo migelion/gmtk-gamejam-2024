@@ -67,14 +67,16 @@ text = "Start Game"
 script = ExtResource("1_gukbc")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 368.0
-offset_top = 200.0
-offset_right = 917.0
-offset_bottom = 327.0
-theme_override_colors/font_color = Color(0.898627, 0.837893, 0.572963, 1)
-theme_override_constants/outline_size = 20
+offset_left = 146.0
+offset_top = 139.0
+offset_right = 1139.0
+offset_bottom = 401.0
+theme_override_colors/font_color = Color(0.89064, 0.851815, 0.426891, 1)
+theme_override_constants/outline_size = 22
 theme_override_fonts/font = ExtResource("4_kjsw8")
-theme_override_font_sizes/font_size = 84
+theme_override_font_sizes/font_size = 100
 text = "Sacred Scales"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

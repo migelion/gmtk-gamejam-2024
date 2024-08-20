@@ -6,12 +6,16 @@ func _ready() -> void:
 	Global.restart.connect(restart)
 	%Time.visible = false
 	$"../MuteMusic".visible = false
-
+	$"../../Ui".visible = false
+	$"../../Panel".visible = false
+	
 func _process(delta: float) -> void:
-	if Global.game_started and !%Time.visible and !$"../MuteMusic".visible:
+	if Global.game_started and !%Time.visible:
 		%Time.visible = true
 		$"../MuteMusic".visible = true
-
+		$"../../Ui".visible = true
+		$"../../Panel".visible = true
+	
 	if time_running:
 		match Global.game_mode:
 			Global.GameMode.SURVIVAL:
