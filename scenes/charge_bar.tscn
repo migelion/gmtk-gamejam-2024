@@ -4,13 +4,13 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io32g"]
 bg_color = Color(0.133333, 0.666667, 0.133333, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
+corner_radius_top_left = 3
+corner_radius_top_right = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wthp3"]
 bg_color = Color(0.666667, 0.133333, 0.133333, 1)
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="ChargeBar" type="VBoxContainer"]
 anchors_preset = 6
