@@ -37,6 +37,20 @@ func end_game() -> void:
 	add_child(instance)
 	game_started = false
 
+func time_text(time: float, short: bool = false) -> String:
+	if short:
+		if Global.time_score < 60:
+			return "%6.2fs" % time
+		else:
+			return "%02d:%.2f" % [floor(time / 60), fmod(time, 60)]
+	else:
+		if Global.time_score < 60:
+			return "%6.2f seconds" % time
+		elif Global.time_score < 120:
+			return "1 minute %.2f seconds" % [fmod(time, 60)]
+		else:
+			return "%d minutes %.2f seconds" % [floor(time / 60), fmod(time, 60)]
+
 func update_scoring(delta: float) -> void:
 	if game_started:
 		time_score += delta
