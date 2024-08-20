@@ -2,7 +2,7 @@ extends Timer
 
 var items_spawned: int = 0
 
-const SURVIVAL_WAIT_TIMES = {
+@export var SURVIVAL_WAIT_TIMES = {
 	0: 0.5,
 	3: 1.5,
 	10: 1.2,
@@ -15,7 +15,7 @@ const SURVIVAL_WAIT_TIMES = {
 	}
 var SURVIVAL_WAIT_TIME_KEYS = SURVIVAL_WAIT_TIMES.keys()
 
-const CHARGE_WAIT_TIMES = {
+@export var CHARGE_WAIT_TIMES = {
 	0: 0.5,
 	3: 1.5,
 	10: 1.2,
