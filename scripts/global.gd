@@ -45,7 +45,16 @@ func update_scoring(delta: float) -> void:
 						high_score = time_score
 					end_game()
 			GameMode.CHARGE:
-				charge += (0.8 - weight_diff / max_diff) * delta * 2
+				var balance_percent = 1 - weight_diff / max_diff
+				if balance_percent > 0.8:
+					charge += balance_percent * delta * 4
+				elif balance_percent > 0:
+					charge += balance_percent * delta / 2
+				elif balance_percent > -.2:
+					charge += balance_percent * delta * 4
+				else:
+					charge += balance_percent * delta * 8
+					
 				charge_changed.emit(charge)
 				# Lose condition
 				if charge < -10:
