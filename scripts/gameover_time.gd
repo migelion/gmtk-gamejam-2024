@@ -5,7 +5,7 @@ func _process(_delta: float) -> void:
 		Global.GameMode.SURVIVAL:
 			text = "Score: %7.2f" % Global.time_score
 		Global.GameMode.CHARGE:
-			if Global.score > 0:
+			if Global.charge > 0:
 				text = "Completed: %7.2f" % Global.time_score
 			else:
 				text = "Failed. Lasted: %7.2f" % Global.time_score

@@ -11,8 +11,11 @@ func _process(delta: float) -> void:
 			Global.GameMode.SURVIVAL:
 				%Time.text = "Time: %8.2f\nHigh Score: %8.2f" % [Global.time_score, Global.high_score]
 			Global.GameMode.CHARGE:
-				%Time.text = ("Charge: %8.2f\nTime: %8.2f\nFastest Fill Time: %8.2f"
-				   % [Global.charge, Global.time_score, Global.fastest_charge])
+				if Global.fastest_charge != 0:
+					%Time.text = ("Charge: %8.2f\nTime: %8.2f\nFastest Fill Time: %8.2f"
+					   % [Global.charge, Global.time_score, Global.fastest_charge])
+				else:
+					%Time.text = ("Charge: %8.2f\nTime: %8.2f" % [Global.charge, Global.time_score])
 
 	# Start timer
 	if Global.game_started and not time_running:

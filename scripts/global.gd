@@ -25,9 +25,9 @@ var music_muted: bool = false
 var weight_diff: float
 var max_diff: float = 140
 var time_score: float = 0
-var score: float = 0
+var charge: float = 0
 var high_score: float = 0
-var fastest_time: float
+var fastest_charge: float = 0
 
 func end_game() -> void:
 	var instance = game_over.instantiate()
@@ -44,13 +44,13 @@ func update_scoring(delta: float) -> void:
 						high_score = time_score
 					end_game()
 			GameMode.CHARGE:
-				score += (0.5 - weight_diff / max_diff) * delta
+				charge += (0.5 - weight_diff / max_diff) * delta
 				# Lose condition
-				if score < -10:
+				if charge < -10:
 					end_game()
-				if score > 60:
-					if fastest_time == null or time_score < fastest_time:
-						fastest_time = time_score
+				if charge > 60:
+					if fastest_charge == 0 or time_score < fastest_charge:
+						fastest_charge = time_score
 					end_game()
 
 func restart_game() -> void:
