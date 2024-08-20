@@ -9,6 +9,7 @@ func _ready() -> void:
 func play_music() -> void:
 	play()
 	toggle_music()
+	$"../IntroMusicPlayer".stop()
 
 func toggle_music() -> void:
 	match Global.music_muted:

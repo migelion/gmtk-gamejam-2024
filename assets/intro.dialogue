@@ -13,7 +13,6 @@ You: Like the Egyptian Pharaoh?
 Anubis: Pft, curse Abraham for his confounding.
 Anubis: I am no Pharaoh! But it matters not little one. Behold.
 do Global.show_scales()
-do Global.play_music.emit()
 do Global.show_inventory()
 You: What is this?
 Anubis: These are the Scales of Justice. To measure these wretched souls.
@@ -25,8 +24,9 @@ Anubis: I will take my leave now.
 You: Wait, what?
 Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND FEAST AND RECIEVE PETS. Do not perturb my vacation.
 do Global.hide_sprite.emit()
+do Global.play_sound("leaving")
 You: I don’t even have proper training for this..
 You: Wait.. are those scarabs?
-do Global.play_sound("leaving")
+do Global.play_music.emit()
 
 => END

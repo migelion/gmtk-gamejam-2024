@@ -1,6 +1,12 @@
 extends Node
 
+func _ready() -> void:
+	%PlateController.visible = false
+
 func _process(delta: float) -> void:
+	if Global.game_started and !%PlateController.visible:
+		%PlateController.visible = true
+	
 	var left_y = %LeftPlate.position.y
 	var right_y = %RightPlate.position.y
 	

@@ -4,8 +4,14 @@ var time_running: bool = false
 
 func _ready() -> void:
 	Global.restart.connect(restart)
+	%Time.visible = false
+	$"../MuteMusic".visible = false
 
 func _process(delta: float) -> void:
+	if Global.game_started and !%Time.visible and !$"../MuteMusic".visible:
+		%Time.visible = true
+		$"../MuteMusic".visible = true
+
 	if time_running:
 		match Global.game_mode:
 			Global.GameMode.SURVIVAL:

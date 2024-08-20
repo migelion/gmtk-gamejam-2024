@@ -38,8 +38,8 @@ func skip() -> void:
 		Global.show_scales()
 	if not Global.inv_visible:
 		Global.show_inventory()
-	if not $MusicPlayer.playing:
-		$MusicPlayer.play_music()
+	if not $GameMusicPlayer.playing:
+		$GameMusicPlayer.play_music()
 	end()
 
 func end() -> void:
