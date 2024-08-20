@@ -76,7 +76,7 @@ func update_scoring(delta: float) -> void:
 				if charge < -3:
 					endgame_text = "You failed!"
 					end_game()
-				if charge > 70:
+				if charge > 75:
 					if fastest_charge == 0 or time_score < fastest_charge:
 						fastest_charge = time_score
 					endgame_text = "You succeeded!"
