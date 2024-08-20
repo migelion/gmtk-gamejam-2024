@@ -59,7 +59,7 @@ func update_scoring(delta: float) -> void:
 					
 				charge_changed.emit(charge)
 				# Lose condition
-				if charge < -2:
+				if charge < -3:
 					endgame_text = "You failed!"
 					end_game()
 				if charge > 70:

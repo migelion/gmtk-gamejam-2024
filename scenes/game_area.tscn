@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=37 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_kcnws"]
@@ -48,6 +48,18 @@ stream_2/stream = ExtResource("11_qusfa")
 stream_3/stream = ExtResource("12_rpsip")
 
 [sub_resource type="GDScript" id="GDScript_8vbm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uw8w5"]
+bg_color = Color(0.18771, 0.18771, 0.18771, 0.360784)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0839224, 0.0839224, 0.0839224, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Scene" type="Node2D"]
 
@@ -351,6 +363,13 @@ offset_right = 1221.0
 offset_bottom = 332.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1146.0
+offset_top = 131.0
+offset_right = 1222.0
+offset_bottom = 532.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uw8w5")
 
 [connection signal="pressed" from="Controllers/MuteMusic" to="Controllers/MuteMusic" method="_on_pressed"]
 [connection signal="body_entered" from="Offscreen/Burdens/Ankh" to="Offscreen/Burdens/Ankh" method="_on_body_entered"]
