@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do3k80ppaxw24"
-path="res://.godot/imported/marble.png-f39b403f7ffc7ead9a4bfa8dc49a726a.ctex"
+uid="uid://ccgve6cgullmm"
+path="res://.godot/imported/anubis.png-547f7ae64ce600d595e90d1a2cf5e9f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/marble.png"
-dest_files=["res://.godot/imported/marble.png-f39b403f7ffc7ead9a4bfa8dc49a726a.ctex"]
+source_file="res://assets/sprites/anubis.png"
+dest_files=["res://.godot/imported/anubis.png-547f7ae64ce600d595e90d1a2cf5e9f2.ctex"]
 
 [params]
 

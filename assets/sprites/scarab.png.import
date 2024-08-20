@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7efl5il8nte8"
-path="res://.godot/imported/coin.png-c8309bf0f8fb5f3a7d1e96a4eb3f02ce.ctex"
+uid="uid://cq7tmhup0dtml"
+path="res://.godot/imported/scarab.png-5501e34668fa7700eb4ccf2b30b9818e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/coin.png"
-dest_files=["res://.godot/imported/coin.png-c8309bf0f8fb5f3a7d1e96a4eb3f02ce.ctex"]
+source_file="res://assets/sprites/scarab.png"
+dest_files=["res://.godot/imported/scarab.png-5501e34668fa7700eb4ccf2b30b9818e.ctex"]
 
 [params]
 

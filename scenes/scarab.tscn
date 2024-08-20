@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvdl2mlcttvec"]
+[gd_scene load_steps=3 format=3 uid="uid://dvdl2mlcttvec"]
 
 [ext_resource type="Script" path="res://scripts/scarab.gd" id="1_bh15p"]
-[ext_resource type="Texture2D" path="res://assets/sprites/scarab.png" id="1_n4mrg"]
-[ext_resource type="Texture2D" uid="uid://cq7tmhup0dtml" path="res://assets/sprites/scarab_new.png" id="3_h1gmo"]
+[ext_resource type="Texture2D" uid="uid://cq7tmhup0dtml" path="res://assets/sprites/scarab.png" id="3_h1gmo"]
 
 [node name="Scarab" type="Node2D"]
 script = ExtResource("1_bh15p")
@@ -12,7 +11,7 @@ visible = false
 position = Vector2(-18, 0)
 rotation = 1.5708
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_n4mrg")
+texture = ExtResource("3_h1gmo")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-19, 1)

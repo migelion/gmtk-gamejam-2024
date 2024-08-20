@@ -7,8 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://dbypxcnw86v83" path="res://assets/sfx/menu sounds/menu2.wav" id="2_yl65x"]
 [ext_resource type="AudioStream" uid="uid://dbfwmtihingvs" path="res://assets/music/intro.ogg" id="3_1lujl"]
 [ext_resource type="Script" path="res://scripts/dialog/music_player.gd" id="3_dwna6"]
-[ext_resource type="Texture2D" uid="uid://deve8kursx3nx" path="res://assets/sprites/anubis_placeholder.png" id="3_i4b66"]
 [ext_resource type="Script" path="res://scripts/dialog/black_screen.gd" id="3_q1p8c"]
+[ext_resource type="Texture2D" uid="uid://ccgve6cgullmm" path="res://assets/sprites/anubis.png" id="7_6kokg"]
 [ext_resource type="FontFile" uid="uid://50tn5pcvxbmi" path="res://assets/fonts/Merriweather-Regular.ttf" id="8_q1xpl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm75u"]
@@ -56,9 +56,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CharacterSprite" type="Sprite2D" parent="DialogBox"]
 unique_name_in_owner = true
-position = Vector2(376, -73)
-scale = Vector2(0.712625, 0.712625)
-texture = ExtResource("3_i4b66")
+position = Vector2(425, -136)
+scale = Vector2(0.377609, 0.377609)
+texture = ExtResource("7_6kokg")
 
 [node name="BlackScreen" type="Panel" parent="DialogBox"]
 unique_name_in_owner = true

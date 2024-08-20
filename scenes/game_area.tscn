@@ -161,7 +161,7 @@ texture = ExtResource("14_a4t8n")
 [node name="Collision" type="CollisionPolygon2D" parent="Offscreen/Burdens/Ankh"]
 position = Vector2(-1.81633, 3.00701)
 scale = Vector2(0.709065, 0.709065)
-polygon = PackedVector2Array(-8, -37, 0, -38, 6, -35, 10, -28, 17.1142, -10.5318, 16, -1, 12.4337, 9.86227, 3, 34, -4, 37, -10, 34, -20.0033, 9.86227, -23.6966, -1.31648, -23.6966, -11.8483, -13, -32)
+polygon = PackedVector2Array(-8, -37, 0, -38, 6, -35, 10, -28, 16.6647, -9.88205, 16, -1, 11.0234, 2.81073, 3, 34, -4.48996, 35.2478, -10, 34, -18.593, 2.81073, -24.2343, -2.8305, -23.6966, -11.8483, -13, -32)
 
 [node name="Candles" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(100, 0)
