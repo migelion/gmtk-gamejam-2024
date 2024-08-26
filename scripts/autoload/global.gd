@@ -16,7 +16,7 @@ var first_time: bool = true
 var music_muted: bool = false
 
 var max_diff: float = 140
-var max_charge: float = 90
+var max_charge: float = 100
 var min_charge: float = -4
 
 var weight_diff: float
