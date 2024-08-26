@@ -1,7 +1,7 @@
 ~ start
 
 You: Huh? Where- wh-
-do Global.focus.emit()
+do Events.focus.emit()
 do Global.set_mouse_input(false)
 do wait(1.5)
 do Global.set_mouse_input(true)
@@ -23,10 +23,10 @@ You: Huh?
 Anubis: I will take my leave now. Do not make a mess.
 You: Wait, what?
 Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND FEAST AND RECIEVE PETS. Do not perturb my vacation.
-do Global.hide_sprite.emit()
+do Events.hide_sprite.emit()
 do Global.play_sound("leaving")
 You: I don’t even have proper training for this..
 You: Wait.. are those scarabs?
-do Global.play_music.emit()
+do Events.play_music.emit()
 
 => END
