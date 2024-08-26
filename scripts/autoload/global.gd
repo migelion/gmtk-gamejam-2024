@@ -1,18 +1,10 @@
 extends Node
 
-signal focus
-signal play_music
-signal play_impact_sound
-signal hide_sprite
-signal restart
-signal toggle_music
-signal charge_changed
-
 var scales = preload("res://scenes/game_area.tscn")
 var inventory = preload("res://scenes/inventory.tscn")
 var game_over = preload("res://scenes/game_over.tscn")
 
-enum GameMode { SURVIVAL, CHARGE}
+enum GameMode { SURVIVAL, CHARGE }
 var game_mode = GameMode.CHARGE
 
 var blackscreen: bool = true
@@ -23,8 +15,11 @@ var game_started: bool = false
 var first_time: bool = true
 var music_muted: bool = false
 
-var weight_diff: float
 var max_diff: float = 140
+var max_charge: float = 90
+var min_charge: float = -4
+
+var weight_diff: float
 var time_score: float = 0
 var charge: float = 0
 var high_score: float = 0
@@ -71,12 +66,12 @@ func update_scoring(delta: float) -> void:
 				else:
 					charge += (balance_percent - 0.9) * delta * 4
 					
-				charge_changed.emit(charge)
+				Events.charge_changed.emit(charge)
 				# Lose condition
-				if charge < -4:
+				if charge < min_charge:
 					endgame_text = "You failed!"
 					end_game()
-				if charge > 90:
+				if charge > max_charge:
 					if fastest_charge == 0 or time_score < fastest_charge:
 						fastest_charge = time_score
 					endgame_text = "You succeeded!"

@@ -7,7 +7,7 @@ class_name Burden
 
 func _on_body_entered(_body: Node) -> void:
 	if linear_velocity.y > 50:
-		Global.play_impact_sound.emit()
+		Events.play_impact_sound.emit()
 
 func disable_collision() -> void:
 	if self.has_node("Collision"):

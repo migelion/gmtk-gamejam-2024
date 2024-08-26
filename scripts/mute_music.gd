@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func toggle_music() -> void:
 	Global.music_muted = !Global.music_muted
-	Global.toggle_music.emit()
+	Events.toggle_music.emit()
 	check_state()
 
 func check_state() -> void:

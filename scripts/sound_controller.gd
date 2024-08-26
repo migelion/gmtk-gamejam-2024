@@ -1,7 +1,7 @@
 extends Node
 
 func _ready() -> void:
-	Global.play_impact_sound.connect(play_impact_sound)
+	Events.play_impact_sound.connect(play_impact_sound)
 
 func play_impact_sound() -> void:
 	%ImpactSound.play()

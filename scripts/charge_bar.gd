@@ -7,7 +7,9 @@ func _ready() -> void:
 			visible = false
 		Global.GameMode.CHARGE:
 			visible = true
-			Global.charge_changed.connect(_charge_changed)
+			Events.charge_changed.connect(_charge_changed)
+			$Positive.max_value = Global.max_charge
+			$Negative.max_value = abs(Global.min_charge)
 
 func _charge_changed(charge: float) -> void:
 	$Positive.value = charge

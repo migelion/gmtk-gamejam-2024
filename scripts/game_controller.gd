@@ -3,7 +3,7 @@ extends Node
 var time_running: bool = false
 
 func _ready() -> void:
-	Global.restart.connect(restart)
+	Events.restart.connect(restart)
 	%Time.visible = false
 	$"../MuteMusic".visible = false
 	$"../../Ui".visible = false

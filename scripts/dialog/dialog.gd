@@ -6,7 +6,7 @@ var typing: bool = false
 var enabled: bool = true
 
 func _ready() -> void:
-	Global.hide_sprite.connect(hide_sprite)
+	Events.hide_sprite.connect(hide_sprite)
 	resource = load("res://assets/intro.dialogue")
 	line = await resource.get_next_dialogue_line("start")
 	new_line()

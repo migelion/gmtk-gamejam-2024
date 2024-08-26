@@ -1,7 +1,7 @@
 extends Panel
 
 func _ready() -> void:
-	Global.focus.connect(fade_out)
+	Events.focus.connect(fade_out)
 	visible = true
 		
 func fade_out() -> void:
