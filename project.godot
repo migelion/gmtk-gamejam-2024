@@ -18,7 +18,11 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Global="*res://scripts/global.gd"
+Global="*res://scripts/autoload/global.gd"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
 
 [display]
 

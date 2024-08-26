@@ -16,10 +16,11 @@ var items_spawned: int = 0
 var SURVIVAL_WAIT_TIME_KEYS = SURVIVAL_WAIT_TIMES.keys()
 
 @export var CHARGE_WAIT_TIMES = {
-	0: 0.2,
+	0: 0.3,
 	4: 1.2,
 	13: 1,
 	35: 0.8,
+	60: 0.6,
 	}
 var CHARGE_WAIT_TIME_KEYS = CHARGE_WAIT_TIMES.keys()
 
@@ -39,7 +40,7 @@ func update_wait_time() -> void:
 		Global.GameMode.CHARGE:
 			wait_times = CHARGE_WAIT_TIMES
 			wait_time_keys = CHARGE_WAIT_TIME_KEYS
-	var next_wait_time = 0.5
+	var next_wait_time: float = 0.5
 	for key in wait_time_keys:
 		if key <= items_spawned:
 			next_wait_time = wait_times[key]

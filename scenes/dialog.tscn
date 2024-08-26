@@ -56,7 +56,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CharacterSprite" type="Sprite2D" parent="DialogBox"]
 unique_name_in_owner = true
-position = Vector2(425, -136)
+position = Vector2(411, -136)
 scale = Vector2(0.377609, 0.377609)
 texture = ExtResource("7_6kokg")
 

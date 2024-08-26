@@ -147,7 +147,7 @@ unique_name_in_owner = true
 
 [node name="Ankh" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(40, 0)
-mass = 1.15
+mass = 1.2
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
@@ -165,7 +165,7 @@ polygon = PackedVector2Array(-8, -37, 0, -38, 6, -35, 10, -28, 16.6647, -9.88205
 
 [node name="Candles" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(100, 0)
-mass = 1.15
+mass = 1.2
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
@@ -186,7 +186,7 @@ freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
-spawnRate = 0.5
+spawnRate = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Feather"]
 position = Vector2(-1, -1)
@@ -198,7 +198,7 @@ polygon = PackedVector2Array(-23, -12, -27, -11, -24, 3, -16, 11, -6, 17, 10, 17
 
 [node name="Player" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(196, -7)
-mass = 2.5
+mass = 3.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
@@ -216,7 +216,7 @@ polygon = PackedVector2Array(-9, -28, -14.8704, -26.7668, -20.0751, -20.0751, -2
 
 [node name="Portrait" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(267, -3)
-mass = 2.5
+mass = 3.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
@@ -234,12 +234,12 @@ polygon = PackedVector2Array(-19.6422, -29.4633, -19.6422, 25.3712, 23, 26, 23, 
 
 [node name="Statue" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(440, -73)
-mass = 5.0
+mass = 6.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("13_tnuiq")
-spawnRate = 0.1
+spawnRate = 0.12
 
 [node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Statue"]
 position = Vector2(1, -1)
@@ -252,7 +252,7 @@ polygon = PackedVector2Array(15.55, -45.0133, -11.4579, 5.72897, -39.2844, 14.73
 
 [node name="Pot" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(263, -81)
-mass = 2.0
+mass = 3.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
@@ -270,7 +270,7 @@ polygon = PackedVector2Array(-21, -26, -21.1962, -1.00935, -10.0934, 28.2616, 1.
 
 [node name="Book" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(35, -55)
-mass = 1.15
+mass = 1.2
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1
@@ -286,7 +286,7 @@ polygon = PackedVector2Array(-28, -6, -29, 11, 28, 10, 29.2729, -7.8061)
 
 [node name="Stone" type="RigidBody2D" parent="Offscreen/Burdens"]
 position = Vector2(196, -78)
-mass = 2.0
+mass = 3.0
 freeze = true
 contact_monitor = true
 max_contacts_reported = 1

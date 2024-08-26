@@ -11,28 +11,28 @@ class_name Scarab
 enum State {DELIVERING, SCAVENGING, LEAVING}
 @export var state = State.LEAVING
 
-func carry(object: Node2D):
+func carry(object: Node2D) -> void:
 	assert(carried_object == null)
 	carried_object = object
 	if object.get_parent() and object.get_parent() != self:
 		object.get_parent().remove_child(object)
 	object.position = Vector2(0,0)
 	object.rotation = randi() % 180
-	var rigid = object as RigidBody2D
+	var rigid: RigidBody2D = object
 	if rigid:
 		rigid.freeze = true
 		if rigid.has_method("disable_collision"):
 			rigid.disable_collision()
 	add_child(object)
 
-func drop():
-	var carried_position = carried_object.global_position
-	var carried_rotation = carried_object.global_rotation
+func drop() -> void:
+	var carried_position: Vector2 = carried_object.global_position
+	var carried_rotation: float = carried_object.global_rotation
 	remove_child(carried_object)
 	get_parent().add_child(carried_object)
 	carried_object.global_position = carried_position
 	carried_object.global_rotation = carried_rotation
-	var carried_rigid = carried_object as RigidBody2D
+	var carried_rigid: RigidBody2D = carried_object
 	if carried_rigid:
 		carried_rigid.freeze = false
 		if carried_rigid.has_method("enable_collision"):
@@ -41,9 +41,9 @@ func drop():
 			Vector2.RIGHT.rotated(global_rotation) * speed * carried_rigid.mass)
 	carried_object = null
 
-func turn_toward(target_location, delta):
-	var target_rotation = global_position.angle_to_point(target_location)
-	var current_rotation = global_rotation
+func turn_toward(target_location: Vector2, delta: float) -> void:
+	var target_rotation: float = global_position.angle_to_point(target_location)
+	var current_rotation: float = global_rotation
 	target_rotation = fmod(target_rotation, 2 * PI)
 	current_rotation = fmod(current_rotation, 2 * PI)
 	if target_rotation > current_rotation + PI:
@@ -61,14 +61,14 @@ func _physics_process(delta: float) -> void:
 	if !is_instance_valid(target):
 		target = despawnTarget
 		state = State.LEAVING
-	var target_location = target.global_position
+	var target_location: Vector2 = target.global_position
 	turn_toward(target_location, delta)
 	global_position += Vector2.RIGHT.rotated(global_rotation) * delta * speed
 	if global_position.distance_squared_to(target_location) < 10:
 		arrive()
 
-func arrive():
-	match (state):
+func arrive() -> void:
+	match state:
 		State.DELIVERING:
 			if carried_object:
 				drop()

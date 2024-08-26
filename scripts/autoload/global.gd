@@ -62,7 +62,7 @@ func update_scoring(delta: float) -> void:
 					end_game()
 			GameMode.CHARGE:
 				balance_percent = 1 - weight_diff / max_diff
-				if balance_percent > 0.87:
+				if balance_percent > 0.89:
 					charge += balance_percent * delta * 3
 				elif balance_percent > 0:
 					charge += (balance_percent - 1) * delta
@@ -73,10 +73,10 @@ func update_scoring(delta: float) -> void:
 					
 				charge_changed.emit(charge)
 				# Lose condition
-				if charge < -3:
+				if charge < -4:
 					endgame_text = "You failed!"
 					end_game()
-				if charge > 75:
+				if charge > 90:
 					if fastest_charge == 0 or time_score < fastest_charge:
 						fastest_charge = time_score
 					endgame_text = "You succeeded!"

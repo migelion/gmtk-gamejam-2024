@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	$BalanceLabel.text = "%4.0f" % percent
 
 	var color := Color.WHITE
-	if percent > 87:
+	if percent > 90:
 		color = Color.GREEN
 	elif percent < 0:
 		color = Color.RED
