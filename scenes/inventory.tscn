@@ -10,10 +10,10 @@ corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgi40"]
-size = Vector2(150, 2.00096)
+size = Vector2(104, 3.00075)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj3pb"]
-size = Vector2(58, 0.999634)
+size = Vector2(12.0004, 1.99975)
 
 [node name="Inventory" type="Node2D"]
 position = Vector2(249, 327)
@@ -21,7 +21,7 @@ position = Vector2(249, 327)
 [node name="Panel" type="Panel" parent="."]
 z_index = -1
 offset_left = -205.0
-offset_top = 198.0
+offset_top = 244.0
 offset_right = 8.0
 offset_bottom = 349.0
 mouse_filter = 1
@@ -32,14 +32,14 @@ position = Vector2(11, 465)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bottom"]
 position = Vector2(-143, -55.25)
-polygon = PackedVector2Array(-69, -134.75, -69, -59.75, -42, -39.75, 14, -28.75, 80, -35.75, 115, -53.75, 135, -78.75, 139, -158.75, 138, -166.75, 135, -135.75, 123, -107.75, 107, -87.75, 90, -75.75, 67, -65.75, 39, -62.75, 10, -63.75, -15, -72.75, -37, -86.75, -54, -106.75, -66, -127.75)
+polygon = PackedVector2Array(-70, -134.75, -69, -59.75, -42, -39.75, 14, -28.75, 80, -35.75, 115, -53.75, 135, -78.75, 139, -158.75, 138, -166.75, 135, -135.75, 123, -107.75, 107, -87.75, 90, -75.75, 67, -65.75, 39, -62.75, 10, -63.75, -15, -72.75, -37, -86.75, -54, -106.75, -66, -127.75)
 
 [node name="Left" type="StaticBody2D" parent="."]
 position = Vector2(-223, 105)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-position = Vector2(168, -19.9994)
+position = Vector2(191, -19.4995)
 shape = SubResource("RectangleShape2D_tgi40")
 
 [node name="Right" type="StaticBody2D" parent="."]
@@ -47,5 +47,5 @@ position = Vector2(219, 105)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-position = Vector2(121.999, 212.501)
+position = Vector2(144.999, 213.001)
 shape = SubResource("RectangleShape2D_pj3pb")
