@@ -16,11 +16,12 @@ var items_spawned: int = 0
 var SURVIVAL_WAIT_TIME_KEYS = SURVIVAL_WAIT_TIMES.keys()
 
 @export var CHARGE_WAIT_TIMES = {
-	0: 0.3,
-	4: 1.2,
-	13: 1,
-	35: 0.8,
-	80: 0.6,
+	0: 0.4,
+	2: 1.2,
+	15: 1,
+	40: 0.8,
+	90: 0.6,
+	140: 0.4,
 	}
 var CHARGE_WAIT_TIME_KEYS = CHARGE_WAIT_TIMES.keys()
 
